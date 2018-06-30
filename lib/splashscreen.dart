@@ -2,15 +2,17 @@ library splashscreen;
 import 'dart:async';
 import 'package:flutter/material.dart';
 class SplashScreen extends StatefulWidget {
-  final Timer timer;
+  final int seconds;
   final String imageNetwork;
   final Text title;
   final Color backgroundColor;
   final TextStyle styleTextUnderTheLoader;
   final Color loaderColor;
+  final Widget navigate;
   SplashScreen(
       {
-        @required this.timer,
+        @required this.seconds,
+        this.navigate,
         this.imageNetwork,
         this.title = const Text('Welcome In Our App'),
         this.backgroundColor = Colors.white,
@@ -30,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    widget.timer;
+    Timer(Duration(seconds: widget.seconds), ()=>Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context)=> widget.navigate)));
   }
   @override
   Widget build(BuildContext context) {
@@ -50,7 +52,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 child: Container(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[//              currentAccountPicture: new Image.network("https://scontent.faly2-1.fna.fbcdn.net/v/t1.0-9/33992593_219597895500862_5208963592451260416_n.jpg?_nc_cat=0&oh=8441e4efe43eb170b9f543d86e177724&oe=5BB96764"),
+                      children: <Widget>[
                         CircleAvatar(
                           backgroundColor: Colors.transparent,
                           child: new Container(

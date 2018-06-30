@@ -32,7 +32,8 @@ To use this package :
 
 ``` dart
       new SplashScreen(
-      timer: Timer(Duration(seconds: 12),(){Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => new AfterLogin()),);}),
+      seconds: 14,
+      navigate: new AfterSplash(),
       title: new Text('Welcome In SplashScreen'),
       imageNetwork: 'https://i.imgur.com/TyCSG9A.png',
       loaderColor: Colors.blue,
@@ -41,7 +42,7 @@ To use this package :
     );
 ```
 
-##Example
+## Example
 ```dart
 
 import 'dart:async';
@@ -62,13 +63,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return new SplashScreen(
-      timer: Timer(Duration(seconds: 12), (){
-      Navigator.of(context).push(
-      new MaterialPageRoute(
-      builder: (BuildContext context) => new AfterLogin()),
-      );
-      }
-    ),
+      seconds: 4,
+      navigate: new AfterSplash(),
       title: new Text('Welcome In SplashScreen'),
       imageNetwork: 'https://i.imgur.com/TyCSG9A.png',
 
@@ -76,7 +72,7 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
-class AfterLogin extends StatelessWidget {
+class AfterSplash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(

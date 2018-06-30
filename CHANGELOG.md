@@ -1,2 +1,4 @@
+## [0.0.2] - Release 
+  * Fix Big Issues , Bugs and Infinite Navigation
 ## [0.0.1] - Release
-  #### 1. SplashScreen Library First Release
+  * SplashScreen Library First Release
