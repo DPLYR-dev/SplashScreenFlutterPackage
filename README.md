@@ -46,6 +46,7 @@ To use this package :
 
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:splashscreen/splashscreen.dart';
 void main(){
   runApp(new MaterialApp(
     home: MyApp(),
