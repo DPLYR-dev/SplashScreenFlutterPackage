@@ -41,7 +41,7 @@ To use this package :
     );
 ```
 
-##Example
+## Example
 ```dart
 
 import 'dart:async';
