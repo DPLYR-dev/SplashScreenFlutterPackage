@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
-
 void main(){
   runApp(new MaterialApp(
     home: MyApp(),
@@ -18,13 +17,12 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return new SplashScreen(
-      timer: Timer(Duration(seconds: 12), (){
-      Navigator.of(context).push(
-      new MaterialPageRoute(
-      builder: (BuildContext context) => new AfterLogin()),
-      );
-      }
-    ),
+      timer: Timer(Duration(seconds: 12),(){Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => new AfterLogin()),);}),
+      title: new Text('Welcome In SplashScreen'),
+      imageNetwork: 'https://i.imgur.com/TyCSG9A.png',
+      loaderColor: Colors.blue,
+      backgroundColor: Colors.white,
+      styleTextUnderTheLoader: new TextStyle()
     );
   }
 }

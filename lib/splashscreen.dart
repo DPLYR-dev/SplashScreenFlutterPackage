@@ -7,6 +7,7 @@ class SplashScreen extends StatefulWidget {
   final Text title;
   final Color backgroundColor;
   final TextStyle styleTextUnderTheLoader;
+  final Color loaderColor;
   SplashScreen(
       {
         @required this.timer,
@@ -17,7 +18,8 @@ class SplashScreen extends StatefulWidget {
             fontSize: 18.0,
             fontWeight: FontWeight.bold,
             color: Colors.black
-        )
+        ),
+        this.loaderColor = Colors.blue
       }
       );
   @override
@@ -72,7 +74,9 @@ class _SplashScreenState extends State<SplashScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    CircularProgressIndicator(),
+                    CircularProgressIndicator(
+                      backgroundColor: widget.loaderColor,
+                    ),
                     Padding(
                       padding: const EdgeInsets.only(top: 20.0),
                     ),
