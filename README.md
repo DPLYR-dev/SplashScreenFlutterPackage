@@ -33,15 +33,13 @@ To use this package :
 ``` dart
       new SplashScreen(
       seconds: 14,
-      navigate: new AfterSplash(),
+      navigateAfterSeconds: new AfterSplash(),
       title: new Text('Welcome In SplashScreen'),
       imageNetwork: 'https://i.imgur.com/TyCSG9A.png',
-      loaderColor: Colors.blue,
       backgroundColor: Colors.white,
       styleTextUnderTheLoader: new TextStyle(),
-      photoHeight: 110.0,
-      photoWidth: 110.0,
-      photoRadius: 60.0
+      photoRadius: 100.0,
+      
     );
 ```
 
@@ -67,19 +65,17 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return new SplashScreen(
       seconds: 14,
-      navigate: new AfterSplash(),
+      navigateAfterSeconds: new AfterSplash(),
       title: new Text('Welcome In SplashScreen',
       style: new TextStyle(
         fontWeight: FontWeight.bold,
         fontSize: 20.0
       ),),
       imageNetwork: 'https://i.imgur.com/TyCSG9A.png',
-      photoHeight: 110.0,
-      photoWidth: 110.0,
-      loaderColor: Colors.blue,
       backgroundColor: Colors.white,
       styleTextUnderTheLoader: new TextStyle(),
-      photoRadius: 60.0,
+      photoRadius: 100.0,
+      onClick: ()=>print("Flutter Egypt")
     );
   }
 }
@@ -103,9 +99,4 @@ class AfterSplash extends StatelessWidget {
   }
 }
 
-<<<<<<< HEAD
-
 ```
-=======
-```
->>>>>>> 01742679c01464b04bd8c0fafce0da5af02b1082

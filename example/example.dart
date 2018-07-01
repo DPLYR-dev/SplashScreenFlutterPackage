@@ -17,19 +17,17 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return new SplashScreen(
       seconds: 14,
-      navigate: new AfterSplash(),
+      navigateAfterSeconds: new AfterSplash(),
       title: new Text('Welcome In SplashScreen',
       style: new TextStyle(
         fontWeight: FontWeight.bold,
         fontSize: 20.0
       ),),
       imageNetwork: 'https://i.imgur.com/TyCSG9A.png',
-      photoHeight: 110.0,
-      photoWidth: 110.0,
-      loaderColor: Colors.blue,
       backgroundColor: Colors.white,
       styleTextUnderTheLoader: new TextStyle(),
-      photoRadius: 60.0,
+      photoSize: 100.0,
+      onClick: ()=>print("Flutter Egypt"),
     );
   }
 }
