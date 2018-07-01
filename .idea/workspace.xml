@@ -54,17 +54,17 @@
               <first_editor relative-caret-position="960">
                 <caret line="51" column="48" lean-forward="true" selection-start-line="51" selection-start-column="48" selection-end-line="51" selection-end-column="48" />
                 <folding>
-                  <marker date="1530423283992" expanded="true" signature="635:698" ph="dependencies: &lt;2 keys&gt;" />
-                  <marker date="1530423283992" expanded="true" signature="653:680" ph="flutter: &lt;1 key&gt;" />
-                  <marker date="1530423283992" expanded="true" signature="673:680" ph="flutter" />
-                  <marker date="1530423283992" expanded="true" signature="1144:1225" ph="..." />
-                  <marker date="1530423283992" expanded="true" signature="1177:1225" ph="..." />
-                  <marker date="1530423283992" expanded="true" signature="1237:1295" ph="{...}" />
-                  <marker date="1530423283992" expanded="true" signature="1333:1398" ph="{...}" />
-                  <marker date="1530423283992" expanded="true" signature="1439:1983" ph="{...}" />
-                  <marker date="1530423283992" expanded="true" signature="1490:1981" ph="{...}" />
-                  <marker date="1530423283992" expanded="true" signature="2027:2388" ph="{...}" />
-                  <marker date="1530423283992" expanded="true" signature="2078:2386" ph="{...}" />
+                  <marker date="1530423511401" expanded="true" signature="635:698" ph="dependencies: &lt;2 keys&gt;" />
+                  <marker date="1530423511401" expanded="true" signature="653:680" ph="flutter: &lt;1 key&gt;" />
+                  <marker date="1530423511401" expanded="true" signature="673:680" ph="flutter" />
+                  <marker date="1530423511401" expanded="true" signature="1144:1225" ph="..." />
+                  <marker date="1530423511401" expanded="true" signature="1177:1225" ph="..." />
+                  <marker date="1530423511401" expanded="true" signature="1237:1295" ph="{...}" />
+                  <marker date="1530423511401" expanded="true" signature="1333:1398" ph="{...}" />
+                  <marker date="1530423511401" expanded="true" signature="1439:1983" ph="{...}" />
+                  <marker date="1530423511401" expanded="true" signature="1490:1981" ph="{...}" />
+                  <marker date="1530423511401" expanded="true" signature="2027:2388" ph="{...}" />
+                  <marker date="1530423511401" expanded="true" signature="2078:2386" ph="{...}" />
                 </folding>
               </first_editor>
               <second_editor />
@@ -286,7 +286,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1530423368579" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1530423566478" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -334,7 +334,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1530423368579" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1530423566478" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -549,7 +549,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1368" height="748" extended-state="0" />
+    <frame x="0" y="0" width="1368" height="748" extended-state="1" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32792208" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -610,17 +610,17 @@
           <first_editor relative-caret-position="1520">
             <caret line="76" column="26" lean-forward="false" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
             <folding>
-              <marker date="1530423283992" expanded="true" signature="635:698" ph="dependencies: &lt;2 keys&gt;" />
-              <marker date="1530423283992" expanded="true" signature="653:680" ph="flutter: &lt;1 key&gt;" />
-              <marker date="1530423283992" expanded="true" signature="673:680" ph="flutter" />
-              <marker date="1530423283992" expanded="true" signature="1144:1225" ph="..." />
-              <marker date="1530423283992" expanded="true" signature="1177:1225" ph="..." />
-              <marker date="1530423283992" expanded="true" signature="1237:1295" ph="{...}" />
-              <marker date="1530423283992" expanded="true" signature="1333:1398" ph="{...}" />
-              <marker date="1530423283992" expanded="true" signature="1439:1983" ph="{...}" />
-              <marker date="1530423283992" expanded="true" signature="1490:1981" ph="{...}" />
-              <marker date="1530423283992" expanded="true" signature="2027:2388" ph="{...}" />
-              <marker date="1530423283992" expanded="true" signature="2078:2386" ph="{...}" />
+              <marker date="1530423511401" expanded="true" signature="635:698" ph="dependencies: &lt;2 keys&gt;" />
+              <marker date="1530423511401" expanded="true" signature="653:680" ph="flutter: &lt;1 key&gt;" />
+              <marker date="1530423511401" expanded="true" signature="673:680" ph="flutter" />
+              <marker date="1530423511401" expanded="true" signature="1144:1225" ph="..." />
+              <marker date="1530423511401" expanded="true" signature="1177:1225" ph="..." />
+              <marker date="1530423511401" expanded="true" signature="1237:1295" ph="{...}" />
+              <marker date="1530423511401" expanded="true" signature="1333:1398" ph="{...}" />
+              <marker date="1530423511401" expanded="true" signature="1439:1983" ph="{...}" />
+              <marker date="1530423511401" expanded="true" signature="1490:1981" ph="{...}" />
+              <marker date="1530423511401" expanded="true" signature="2027:2388" ph="{...}" />
+              <marker date="1530423511401" expanded="true" signature="2078:2386" ph="{...}" />
             </folding>
           </first_editor>
           <second_editor />
@@ -690,17 +690,17 @@
           <first_editor relative-caret-position="240">
             <caret line="12" column="41" lean-forward="true" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
             <folding>
-              <marker date="1530423283992" expanded="true" signature="635:698" ph="dependencies: &lt;2 keys&gt;" />
-              <marker date="1530423283992" expanded="true" signature="653:680" ph="flutter: &lt;1 key&gt;" />
-              <marker date="1530423283992" expanded="true" signature="673:680" ph="flutter" />
-              <marker date="1530423283992" expanded="true" signature="1144:1225" ph="..." />
-              <marker date="1530423283992" expanded="true" signature="1177:1225" ph="..." />
-              <marker date="1530423283992" expanded="true" signature="1237:1295" ph="{...}" />
-              <marker date="1530423283992" expanded="true" signature="1333:1398" ph="{...}" />
-              <marker date="1530423283992" expanded="true" signature="1439:1983" ph="{...}" />
-              <marker date="1530423283992" expanded="true" signature="1490:1981" ph="{...}" />
-              <marker date="1530423283992" expanded="true" signature="2027:2388" ph="{...}" />
-              <marker date="1530423283992" expanded="true" signature="2078:2386" ph="{...}" />
+              <marker date="1530423511401" expanded="true" signature="635:698" ph="dependencies: &lt;2 keys&gt;" />
+              <marker date="1530423511401" expanded="true" signature="653:680" ph="flutter: &lt;1 key&gt;" />
+              <marker date="1530423511401" expanded="true" signature="673:680" ph="flutter" />
+              <marker date="1530423511401" expanded="true" signature="1144:1225" ph="..." />
+              <marker date="1530423511401" expanded="true" signature="1177:1225" ph="..." />
+              <marker date="1530423511401" expanded="true" signature="1237:1295" ph="{...}" />
+              <marker date="1530423511401" expanded="true" signature="1333:1398" ph="{...}" />
+              <marker date="1530423511401" expanded="true" signature="1439:1983" ph="{...}" />
+              <marker date="1530423511401" expanded="true" signature="1490:1981" ph="{...}" />
+              <marker date="1530423511401" expanded="true" signature="2027:2388" ph="{...}" />
+              <marker date="1530423511401" expanded="true" signature="2078:2386" ph="{...}" />
             </folding>
           </first_editor>
           <second_editor />
@@ -758,17 +758,17 @@
           <first_editor relative-caret-position="960">
             <caret line="51" column="48" lean-forward="true" selection-start-line="51" selection-start-column="48" selection-end-line="51" selection-end-column="48" />
             <folding>
-              <marker date="1530423283992" expanded="true" signature="635:698" ph="dependencies: &lt;2 keys&gt;" />
-              <marker date="1530423283992" expanded="true" signature="653:680" ph="flutter: &lt;1 key&gt;" />
-              <marker date="1530423283992" expanded="true" signature="673:680" ph="flutter" />
-              <marker date="1530423283992" expanded="true" signature="1144:1225" ph="..." />
-              <marker date="1530423283992" expanded="true" signature="1177:1225" ph="..." />
-              <marker date="1530423283992" expanded="true" signature="1237:1295" ph="{...}" />
-              <marker date="1530423283992" expanded="true" signature="1333:1398" ph="{...}" />
-              <marker date="1530423283992" expanded="true" signature="1439:1983" ph="{...}" />
-              <marker date="1530423283992" expanded="true" signature="1490:1981" ph="{...}" />
-              <marker date="1530423283992" expanded="true" signature="2027:2388" ph="{...}" />
-              <marker date="1530423283992" expanded="true" signature="2078:2386" ph="{...}" />
+              <marker date="1530423511401" expanded="true" signature="635:698" ph="dependencies: &lt;2 keys&gt;" />
+              <marker date="1530423511401" expanded="true" signature="653:680" ph="flutter: &lt;1 key&gt;" />
+              <marker date="1530423511401" expanded="true" signature="673:680" ph="flutter" />
+              <marker date="1530423511401" expanded="true" signature="1144:1225" ph="..." />
+              <marker date="1530423511401" expanded="true" signature="1177:1225" ph="..." />
+              <marker date="1530423511401" expanded="true" signature="1237:1295" ph="{...}" />
+              <marker date="1530423511401" expanded="true" signature="1333:1398" ph="{...}" />
+              <marker date="1530423511401" expanded="true" signature="1439:1983" ph="{...}" />
+              <marker date="1530423511401" expanded="true" signature="1490:1981" ph="{...}" />
+              <marker date="1530423511401" expanded="true" signature="2027:2388" ph="{...}" />
+              <marker date="1530423511401" expanded="true" signature="2078:2386" ph="{...}" />
             </folding>
           </first_editor>
           <second_editor />

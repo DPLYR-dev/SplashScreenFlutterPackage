@@ -103,5 +103,9 @@ class AfterSplash extends StatelessWidget {
   }
 }
 
+<<<<<<< HEAD
 
 ```
+=======
+```
+>>>>>>> 01742679c01464b04bd8c0fafce0da5af02b1082
