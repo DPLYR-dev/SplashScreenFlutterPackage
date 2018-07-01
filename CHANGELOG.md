@@ -1,3 +1,5 @@
+## [0.0.5] - Loader Color
+  * Add Color Feature To Loader (CircularProgressIndicator)
 ## [0.0.4] - Release Preview
   * Add onClick And Fix Some Errors
 ## [0.0.3] - Beta 2 

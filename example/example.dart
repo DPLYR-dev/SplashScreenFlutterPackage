@@ -23,11 +23,12 @@ class _MyAppState extends State<MyApp> {
         fontWeight: FontWeight.bold,
         fontSize: 20.0
       ),),
-      imageNetwork: 'https://i.imgur.com/TyCSG9A.png',
+      imageNetwork: 'https://flutter.io/images/catalog-widget-placeholder.png',
       backgroundColor: Colors.white,
       styleTextUnderTheLoader: new TextStyle(),
       photoSize: 100.0,
       onClick: ()=>print("Flutter Egypt"),
+      loaderColor: Colors.red,
     );
   }
 }

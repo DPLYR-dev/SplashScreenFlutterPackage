@@ -10,8 +10,10 @@ class SplashScreen extends StatefulWidget {
   final Widget navigateAfterSeconds;
   final double photoSize;
   final dynamic onClick;
+  final Color loaderColor;
   SplashScreen(
       {
+        this.loaderColor,
         @required this.seconds,
         this.photoSize,
         this.onClick,
@@ -84,7 +86,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     children: <Widget>[
 
                       CircularProgressIndicator(
-
+                        valueColor: new AlwaysStoppedAnimation<Color>(widget.loaderColor),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 20.0),

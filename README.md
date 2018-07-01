@@ -30,7 +30,7 @@ To use this package :
 ### How to use
 
 
-``` dart
+``` text
       new SplashScreen(
       seconds: 14,
       navigateAfterSeconds: new AfterSplash(),
@@ -39,7 +39,7 @@ To use this package :
       backgroundColor: Colors.white,
       styleTextUnderTheLoader: new TextStyle(),
       photoRadius: 100.0,
-      
+      loaderColor: Colors.red
     );
 ```
 
@@ -75,7 +75,8 @@ class _MyAppState extends State<MyApp> {
       backgroundColor: Colors.white,
       styleTextUnderTheLoader: new TextStyle(),
       photoRadius: 100.0,
-      onClick: ()=>print("Flutter Egypt")
+      onClick: ()=>print("Flutter Egypt"),
+      loaderColor: Colors.red
     );
   }
 }
@@ -98,5 +99,4 @@ class AfterSplash extends StatelessWidget {
     );
   }
 }
- 
 ```
