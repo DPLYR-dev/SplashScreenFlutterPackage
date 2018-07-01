@@ -9,9 +9,15 @@ class SplashScreen extends StatefulWidget {
   final TextStyle styleTextUnderTheLoader;
   final Color loaderColor;
   final Widget navigate;
+  final double photoWidth;
+  final double photoHeight;
+  final double photoRadius;
   SplashScreen(
       {
         @required this.seconds,
+        this.photoHeight = 110.0,
+        this.photoRadius = 60.0,
+        this.photoWidth = 110.0,
         this.navigate,
         this.imageNetwork,
         this.title = const Text('Welcome In Our App'),
@@ -58,11 +64,11 @@ class _SplashScreenState extends State<SplashScreen> {
                           child: new Container(
                             child: new Image.network(
                               widget.imageNetwork,
-                              width: 110.0,
-                              height: 110.0,
+                              width: widget.photoWidth,
+                              height: widget.photoHeight,
                             ),
                           ),
-                          radius: 60.0,
+                          radius: widget.photoRadius,
                         ),
                         new Padding(
                           padding: const EdgeInsets.only(top: 10.0),

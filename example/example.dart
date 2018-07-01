@@ -1,9 +1,8 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
 void main(){
   runApp(new MaterialApp(
-    home: MyApp(),
+    home: new MyApp(),
   ));
 }
 
@@ -19,11 +18,18 @@ class _MyAppState extends State<MyApp> {
     return new SplashScreen(
       seconds: 14,
       navigate: new AfterSplash(),
-      title: new Text('Welcome In SplashScreen'),
+      title: new Text('Welcome In SplashScreen',
+      style: new TextStyle(
+        fontWeight: FontWeight.bold,
+        fontSize: 20.0
+      ),),
       imageNetwork: 'https://i.imgur.com/TyCSG9A.png',
+      photoHeight: 110.0,
+      photoWidth: 110.0,
       loaderColor: Colors.blue,
       backgroundColor: Colors.white,
-      styleTextUnderTheLoader: new TextStyle()
+      styleTextUnderTheLoader: new TextStyle(),
+      photoRadius: 60.0,
     );
   }
 }

@@ -38,18 +38,21 @@ To use this package :
       imageNetwork: 'https://i.imgur.com/TyCSG9A.png',
       loaderColor: Colors.blue,
       backgroundColor: Colors.white,
-      styleTextUnderTheLoader: new TextStyle()
+      styleTextUnderTheLoader: new TextStyle(),
+      photoHeight: 110.0,
+      photoWidth: 110.0,
+      photoRadius: 60.0
     );
 ```
 
 ## Example
 ```dart
 
-import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:splashscreen/splashscreen.dart';
 void main(){
   runApp(new MaterialApp(
-    home: MyApp(),
+    home: new MyApp(),
   ));
 }
 
@@ -63,11 +66,20 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return new SplashScreen(
-      seconds: 4,
+      seconds: 14,
       navigate: new AfterSplash(),
-      title: new Text('Welcome In SplashScreen'),
+      title: new Text('Welcome In SplashScreen',
+      style: new TextStyle(
+        fontWeight: FontWeight.bold,
+        fontSize: 20.0
+      ),),
       imageNetwork: 'https://i.imgur.com/TyCSG9A.png',
-
+      photoHeight: 110.0,
+      photoWidth: 110.0,
+      loaderColor: Colors.blue,
+      backgroundColor: Colors.white,
+      styleTextUnderTheLoader: new TextStyle(),
+      photoRadius: 60.0,
     );
   }
 }
@@ -76,7 +88,9 @@ class AfterSplash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: new AppBar(title: new Text("Welcome In SplashScreen Package")),
+      appBar: new AppBar(
+      title: new Text("Welcome In SplashScreen Package")
+      ),
       body: new Center(
         child: new Text("Succeeded!",
         style: new TextStyle(
@@ -88,5 +102,6 @@ class AfterSplash extends StatelessWidget {
     );
   }
 }
+
 
 ```
