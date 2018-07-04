@@ -74,7 +74,7 @@ class _MyAppState extends State<MyApp> {
       imageNetwork: 'https://i.imgur.com/TyCSG9A.png',
       backgroundColor: Colors.white,
       styleTextUnderTheLoader: new TextStyle(),
-      photoRadius: 100.0,
+      photoSize: 100.0,
       onClick: ()=>print("Flutter Egypt"),
       loaderColor: Colors.red
     );
