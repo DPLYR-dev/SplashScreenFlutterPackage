@@ -1,45 +1,46 @@
 # Splash Screen
 
-* A small Splash Screen used for an intro for any flutter application easily using
+* A small splash screen package used to easily add an intro to any Flutter application.
 
 ## For iOS And Android 
 
-* It 's Now Very Simple And Easy To Use 
-* Coming Soon Will Add A Greater Functions 
-* For Any information Send Message To Me On => monkey4gamesmmm@gmail.com
+* It is now Very Simple and Easy to Use 
+* Coming Soon: Will add better functionality 
+* Any questions regarding the plugin to monkey4gamesmmm@gmail.com
 
 
-### ScreenShot
-<img src="screenshot.png" height="300et">
+### Screenshot
+![Screenshot](screenshot.png)
 
 ## Usage
 
 [Example](https://github.com/KarimMohamed2005/SplashScreenFlutterPackage/blob/master/example/example.dart)
 
-To use this package :
+To use this package:
 
-* add the dependency to your [pubspec.yaml](https://github.com/KarimMohamed2005/SplashScreenFlutterPackage/blob/master/pubspec.yaml) file.
+* add the `splashscreen` dependency to your [pubspec.yaml](https://github.com/KarimMohamed2005/SplashScreenFlutterPackage/blob/master/pubspec.yaml) file.
 
 ```yaml
   dependencies:
     flutter:
       sdk: flutter
-    splashscreen:
+      
+    splashscreen: ^0.0.6
 ```
 
 ### How to use
 
 
-``` text
-      new SplashScreen(
-      seconds: 14,
-      navigateAfterSeconds: new AfterSplash(),
-      title: new Text('Welcome In SplashScreen'),
-      imageNetwork: 'https://i.imgur.com/TyCSG9A.png',
-      backgroundColor: Colors.white,
-      styleTextUnderTheLoader: new TextStyle(),
-      photoSize: 100.0,
-      loaderColor: Colors.red
+```dart
+      SplashScreen(
+        seconds: 14,
+        navigateAfterSeconds: AfterSplash(),
+        title: Text('Welcome In SplashScreen'),
+        imageNetwork: 'https://i.imgur.com/TyCSG9A.png',
+        backgroundColor: Colors.white,
+        styleTextUnderTheLoader: TextStyle(),
+        photoSize: 100.0,
+        loaderColor: Colors.red,
     );
 ```
 
@@ -49,31 +50,31 @@ To use this package :
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
 void main(){
-  runApp(new MaterialApp(
-    home: new MyApp(),
+  runApp(MaterialApp(
+    home: MyApp(),
   ));
 }
 
 
 class MyApp extends StatefulWidget {
   @override
-  _MyAppState createState() => new _MyAppState();
+  _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return new SplashScreen(
+    return SplashScreen(
       seconds: 14,
-      navigateAfterSeconds: new AfterSplash(),
-      title: new Text('Welcome In SplashScreen',
-      style: new TextStyle(
+      navigateAfterSeconds: AfterSplash(),
+      title: Text('Welcome In SplashScreen',
+      style: TextStyle(
         fontWeight: FontWeight.bold,
         fontSize: 20.0
       ),),
       imageNetwork: 'https://i.imgur.com/TyCSG9A.png',
       backgroundColor: Colors.white,
-      styleTextUnderTheLoader: new TextStyle(),
+      styleTextUnderTheLoader: TextStyle(),
       photoSize: 100.0,
       onClick: ()=>print("Flutter Egypt"),
       loaderColor: Colors.red
@@ -84,13 +85,13 @@ class _MyAppState extends State<MyApp> {
 class AfterSplash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-      title: new Text("Welcome In SplashScreen Package")
+    return Scaffold(
+      appBar: AppBar(
+      title: Text("Welcome In SplashScreen Package")
       ),
-      body: new Center(
-        child: new Text("Succeeded!",
-        style: new TextStyle(
+      body: Center(
+        child: Text("Succeeded!",
+        style: TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 30.0
         ),),
