@@ -38,7 +38,7 @@ To use this package :
       imageNetwork: 'https://i.imgur.com/TyCSG9A.png',
       backgroundColor: Colors.white,
       styleTextUnderTheLoader: new TextStyle(),
-      photoRadius: 100.0,
+      photoSize: 100.0,
       loaderColor: Colors.red
     );
 ```
