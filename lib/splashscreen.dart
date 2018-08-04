@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 class SplashScreen extends StatefulWidget {
   final int seconds;
-  final String imageNetwork;
   final Text title;
   final Color backgroundColor;
   final TextStyle styleTextUnderTheLoader;
@@ -11,6 +10,7 @@ class SplashScreen extends StatefulWidget {
   final double photoSize;
   final dynamic onClick;
   final Color loaderColor;
+  final Image image;
   SplashScreen(
       {
         this.loaderColor,
@@ -18,7 +18,6 @@ class SplashScreen extends StatefulWidget {
         this.photoSize,
         this.onClick,
         this.navigateAfterSeconds,
-        this.imageNetwork,
         this.title = const Text('Welcome In Our App'),
         this.backgroundColor = Colors.white,
         this.styleTextUnderTheLoader = const TextStyle(
@@ -26,6 +25,7 @@ class SplashScreen extends StatefulWidget {
             fontWeight: FontWeight.bold,
             color: Colors.black
         ),
+        this.image
       }
       );
 
@@ -64,11 +64,7 @@ class _SplashScreenState extends State<SplashScreen> {
                           new CircleAvatar(
                             backgroundColor: Colors.transparent,
                             child: new Container(
-                              child: new Image.network(
-                                widget.imageNetwork,
-                                height: 110.0,
-                                width: 110.0,
-                              ),
+                              child: widget.image
                             ),
                             radius: widget.photoSize,
                           ),
