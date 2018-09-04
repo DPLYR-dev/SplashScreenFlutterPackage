@@ -1,12 +1,14 @@
 library splashscreen;
+import 'dart:core';
 import 'dart:async';
 import 'package:flutter/material.dart';
+
 class SplashScreen extends StatefulWidget {
   final int seconds;
   final Text title;
   final Color backgroundColor;
   final TextStyle styleTextUnderTheLoader;
-  final Widget navigateAfterSeconds;
+  final dynamic navigateAfterSeconds;
   final double photoSize;
   final dynamic onClick;
   final Color loaderColor;
@@ -38,7 +40,22 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: widget.seconds), ()=>Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context)=> widget.navigateAfterSeconds)));
+    Timer(
+      Duration(seconds: widget.seconds),
+      () {
+        if (widget.navigateAfterSeconds is String) {
+          // It's fairly safe to assume this is using the in-built material
+          // named route component
+          return Navigator.of(context).pushNamed(widget.navigateAfterSeconds);
+        } else if (widget.navigateAfterSeconds is Widget) {
+          return Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => widget.navigateAfterSeconds));
+        } else {
+          throw new ArgumentError(
+              'widget.navigateAfterSeconds must either be a String or Widget'
+          );
+        }
+      }
+    );
   }
   @override
   Widget build(BuildContext context) {
