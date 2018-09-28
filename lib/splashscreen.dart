@@ -45,81 +45,81 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(
-      Duration(seconds: widget.seconds),
-      () {
-        if (widget.navigateAfterSeconds is String) {
-          // It's fairly safe to assume this is using the in-built material
-          // named route component
-          Navigator.of(context).pushReplacementNamed(widget.navigateAfterSeconds);
-        } else if (widget.navigateAfterSeconds is Widget) {
-          Navigator.of(context).pushReplacement(new MaterialPageRoute(builder: (BuildContext context) => widget.navigateAfterSeconds));
-        } else {
-          throw new ArgumentError(
-              'widget.navigateAfterSeconds must either be a String or Widget'
-          );
+        Duration(seconds: widget.seconds),
+            () {
+          if (widget.navigateAfterSeconds is String) {
+            // It's fairly safe to assume this is using the in-built material
+            // named route component
+            Navigator.of(context).pushReplacementNamed(widget.navigateAfterSeconds);
+          } else if (widget.navigateAfterSeconds is Widget) {
+            Navigator.of(context).pushReplacement(new MaterialPageRoute(builder: (BuildContext context) => widget.navigateAfterSeconds));
+          } else {
+            throw new ArgumentError(
+                'widget.navigateAfterSeconds must either be a String or Widget'
+            );
+          }
         }
-      }
     );
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: new InkWell(
-            onTap: widget.onClick,
-            child:new Stack(
-              fit: StackFit.expand,
+        onTap: widget.onClick,
+        child:new Stack(
+          fit: StackFit.expand,
+          children: <Widget>[
+            new Container(
+              decoration: widget.imageBackground!=null ? new BoxDecoration(
+                image: new DecorationImage(
+                  image: widget.imageBackground,
+                  fit: BoxFit.cover,
+                ),
+              ): BoxDecoration(color: widget.backgroundColor),),
+            new Column(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
-                new Container(
-                  decoration: widget.imageBackground!=null ? new BoxDecoration(
-            image: new DecorationImage(
-            image: widget.imageBackground,
-              fit: BoxFit.cover,
-            ),
-                ): BoxDecoration(color: widget.backgroundColor),),
-                new Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    new Expanded(
-                      flex: 2,
-                      child: new Container(
-                          child: new Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              new CircleAvatar(
-                                backgroundColor: Colors.transparent,
-                                child: new Container(
-                                    child: widget.image
-                                ),
-                                radius: widget.photoSize,
-                              ),
-                              new Padding(
-                                padding: const EdgeInsets.only(top: 10.0),
-                              ),
-                              widget.title
-                            ],
-                          )),
-                    ),
-                    Expanded(
-                      flex: 1,
-                      child: Column(
+                new Expanded(
+                  flex: 2,
+                  child: new Container(
+                      child: new Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-
-                          CircularProgressIndicator(
-                            valueColor: new AlwaysStoppedAnimation<Color>(widget.loaderColor),
+                          new CircleAvatar(
+                            backgroundColor: Colors.transparent,
+                            child: new Container(
+                                child: widget.image
+                            ),
+                            radius: widget.photoSize,
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 20.0),
+                          new Padding(
+                            padding: const EdgeInsets.only(top: 10.0),
                           ),
-                          widget.text
+                          widget.title
                         ],
+                      )),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+
+                      CircularProgressIndicator(
+                        valueColor: new AlwaysStoppedAnimation<Color>(widget.loaderColor),
                       ),
-                    ),
-                  ],
+                      Padding(
+                        padding: const EdgeInsets.only(top: 20.0),
+                      ),
+                      widget.loadingText
+                    ],
+                  ),
                 ),
               ],
             ),
-          ),
+          ],
+        ),
+      ),
     );
   }
 }
