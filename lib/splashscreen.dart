@@ -13,7 +13,7 @@ class SplashScreen extends StatefulWidget {
   final dynamic onClick;
   final Color loaderColor;
   final Image image;
-  final Text LoadingText;
+  final Text loadingText;
   final ImageProvider imageBackground;
   SplashScreen(
       {
