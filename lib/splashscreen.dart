@@ -13,7 +13,7 @@ class SplashScreen extends StatefulWidget {
   final dynamic onClick;
   final Color loaderColor;
   final Image image;
-  final Text text;
+  final Text LoadingText;
   final ImageProvider imageBackground;
   SplashScreen(
       {
@@ -30,7 +30,7 @@ class SplashScreen extends StatefulWidget {
             color: Colors.black
         ),
         this.image,
-        this.text  = const Text(""),
+        this.LoadingText  = const Text(""),
         this.imageBackground
       }
       );
