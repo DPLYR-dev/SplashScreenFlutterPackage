@@ -22,7 +22,7 @@ class SplashScreen extends StatefulWidget {
         this.photoSize,
         this.onClick,
         this.navigateAfterSeconds,
-        this.title = const Text('Welcome In Our App'),
+        this.title = const Text(''),
         this.backgroundColor = Colors.white,
         this.styleTextUnderTheLoader = const TextStyle(
             fontSize: 18.0,
@@ -50,9 +50,9 @@ class _SplashScreenState extends State<SplashScreen> {
         if (widget.navigateAfterSeconds is String) {
           // It's fairly safe to assume this is using the in-built material
           // named route component
-          return Navigator.of(context).pushReplacementNamed(widget.navigateAfterSeconds);
+          Navigator.of(context).pushReplacementNamed(widget.navigateAfterSeconds);
         } else if (widget.navigateAfterSeconds is Widget) {
-          return Navigator.of(context).pushReplacement(new MaterialPageRoute(builder: (BuildContext context) => widget.navigateAfterSeconds));
+          Navigator.of(context).pushReplacement(new MaterialPageRoute(builder: (BuildContext context) => widget.navigateAfterSeconds));
         } else {
           throw new ArgumentError(
               'widget.navigateAfterSeconds must either be a String or Widget'
