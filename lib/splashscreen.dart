@@ -20,7 +20,7 @@ class SplashScreen extends StatefulWidget {
         this.photoSize,
         this.onClick,
         this.navigateAfterSeconds,
-        this.title = const Text('Welcome In Our App'),
+        this.title = const Text(''),
         this.backgroundColor = Colors.white,
         this.styleTextUnderTheLoader = const TextStyle(
             fontSize: 18.0,
