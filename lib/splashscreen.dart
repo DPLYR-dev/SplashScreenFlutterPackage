@@ -13,6 +13,8 @@ class SplashScreen extends StatefulWidget {
   final dynamic onClick;
   final Color loaderColor;
   final Image image;
+  final Text text;
+  final ImageProvider imageBackground;
   SplashScreen(
       {
         this.loaderColor,
@@ -27,7 +29,9 @@ class SplashScreen extends StatefulWidget {
             fontWeight: FontWeight.bold,
             color: Colors.black
         ),
-        this.image
+        this.image,
+        this.text,
+        this.imageBackground
       }
       );
 
@@ -60,64 +64,62 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: widget.backgroundColor,
       body: new InkWell(
-        onTap: widget.onClick,
-        child:new Stack(
-          fit: StackFit.expand,
-          children: <Widget>[
-            new Container(
-              decoration: BoxDecoration(color: widget.backgroundColor),
-            ),
-            new Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+            onTap: widget.onClick,
+            child:new Stack(
+              fit: StackFit.expand,
               children: <Widget>[
-                new Expanded(
-                  flex: 2,
-                  child: new Container(
-                      child: new Column(
+                new Container(
+                  decoration: widget.imageBackground!=null ? new BoxDecoration(
+            image: new DecorationImage(
+            image: widget.imageBackground,
+              fit: BoxFit.cover,
+            ),
+                ): BoxDecoration(color: widget.backgroundColor),),
+                new Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    new Expanded(
+                      flex: 2,
+                      child: new Container(
+                          child: new Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              new CircleAvatar(
+                                backgroundColor: Colors.transparent,
+                                child: new Container(
+                                    child: widget.image
+                                ),
+                                radius: widget.photoSize,
+                              ),
+                              new Padding(
+                                padding: const EdgeInsets.only(top: 10.0),
+                              ),
+                              widget.title
+                            ],
+                          )),
+                    ),
+                    Expanded(
+                      flex: 1,
+                      child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          new CircleAvatar(
-                            backgroundColor: Colors.transparent,
-                            child: new Container(
-                              child: widget.image
-                            ),
-                            radius: widget.photoSize,
-                          ),
-                          new Padding(
-                            padding: const EdgeInsets.only(top: 10.0),
-                          ),
-                          widget.title
-                        ],
-                      )),
-                ),
-                Expanded(
-                  flex: 1,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
 
-                      CircularProgressIndicator(
-                        valueColor: new AlwaysStoppedAnimation<Color>(widget.loaderColor),
+                          CircularProgressIndicator(
+                            valueColor: new AlwaysStoppedAnimation<Color>(widget.loaderColor),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 20.0),
+                          ),
+                          widget.text
+                        ],
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 20.0),
-                      ),
-                      Text("Loading",style: widget.styleTextUnderTheLoader
-                      ),
-                      new Center(
-                        child: Text("Now",style: widget.styleTextUnderTheLoader
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ],
             ),
-          ],
-        ),
-      ),
+          ),
     );
   }
 }
