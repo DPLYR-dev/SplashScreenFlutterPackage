@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
-void main(){
+
+void main() {
   runApp(new MaterialApp(
     home: new MyApp(),
   ));
 }
-
 
 class MyApp extends StatefulWidget {
   @override
@@ -13,21 +13,28 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  Future<dynamic> future = Future.delayed(Duration(seconds: 5), () {
+    return new AfterSplash();
+  });
+
   @override
   Widget build(BuildContext context) {
     return new SplashScreen(
-      seconds: 14,
-      navigateAfterSeconds: new AfterSplash(),
-      title: new Text('Welcome In SplashScreen',
-      style: new TextStyle(
-        fontWeight: FontWeight.bold,
-        fontSize: 20.0
-      ),),
-      image: new Image.network('https://flutter.io/images/catalog-widget-placeholder.png'),
+      navigateTo: future,
+      title: new Text(
+        'Welcome In SplashScreen',
+        style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+      ),
+      image: new Image.network(
+          'https://flutter.io/images/catalog-widget-placeholder.png'),
       backgroundColor: Colors.white,
-      styleTextUnderTheLoader: new TextStyle(),
+      loading: Text("Loading...",
+          style: const TextStyle(
+            fontSize: 16.0,
+            color: Colors.grey,
+          )),
       photoSize: 100.0,
-      onClick: ()=>print("Flutter Egypt"),
+      onClick: () => print("Flutter Egypt"),
       loaderColor: Colors.red,
     );
   }
@@ -40,14 +47,12 @@ class AfterSplash extends StatelessWidget {
       appBar: new AppBar(
         title: new Text("Welcome In SplashScreen Package"),
         automaticallyImplyLeading: false,
-        ),
+      ),
       body: new Center(
-        child: new Text("Succeeded!",
-        style: new TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 30.0
-        ),),
-
+        child: new Text(
+          "Succeeded!",
+          style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0),
+        ),
       ),
     );
   }
