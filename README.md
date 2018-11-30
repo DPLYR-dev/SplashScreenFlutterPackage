@@ -90,7 +90,7 @@ class AfterSplash extends StatelessWidget {
       automaticallyImplyLeading: false
       ),
       body: new Center(
-        child: new Text("Succeeded!",
+        child: new Text("Done!",
         style: new TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 30.0
