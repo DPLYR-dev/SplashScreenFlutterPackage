@@ -13,6 +13,8 @@ class SplashScreen extends StatefulWidget {
   final dynamic onClick;
   final Color loaderColor;
   final Image image;
+  final Text loadingText;
+  final ImageProvider imageBackground;
   SplashScreen(
       {
         this.loaderColor,
@@ -20,14 +22,16 @@ class SplashScreen extends StatefulWidget {
         this.photoSize,
         this.onClick,
         this.navigateAfterSeconds,
-        this.title = const Text('Welcome In Our App'),
+        this.title = const Text(''),
         this.backgroundColor = Colors.white,
         this.styleTextUnderTheLoader = const TextStyle(
             fontSize: 18.0,
             fontWeight: FontWeight.bold,
             color: Colors.black
         ),
-        this.image
+        this.image,
+        this.loadingText  = const Text(""),
+        this.imageBackground
       }
       );
 
@@ -41,34 +45,37 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(
-      Duration(seconds: widget.seconds),
-      () {
-        if (widget.navigateAfterSeconds is String) {
-          // It's fairly safe to assume this is using the in-built material
-          // named route component
-          return Navigator.of(context).pushReplacementNamed(widget.navigateAfterSeconds);
-        } else if (widget.navigateAfterSeconds is Widget) {
-          return Navigator.of(context).pushReplacement(new MaterialPageRoute(builder: (BuildContext context) => widget.navigateAfterSeconds));
-        } else {
-          throw new ArgumentError(
-              'widget.navigateAfterSeconds must either be a String or Widget'
-          );
+        Duration(seconds: widget.seconds),
+            () {
+          if (widget.navigateAfterSeconds is String) {
+            // It's fairly safe to assume this is using the in-built material
+            // named route component
+            Navigator.of(context).pushReplacementNamed(widget.navigateAfterSeconds);
+          } else if (widget.navigateAfterSeconds is Widget) {
+            Navigator.of(context).pushReplacement(new MaterialPageRoute(builder: (BuildContext context) => widget.navigateAfterSeconds));
+          } else {
+            throw new ArgumentError(
+                'widget.navigateAfterSeconds must either be a String or Widget'
+            );
+          }
         }
-      }
     );
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: widget.backgroundColor,
       body: new InkWell(
         onTap: widget.onClick,
         child:new Stack(
           fit: StackFit.expand,
           children: <Widget>[
             new Container(
-              decoration: BoxDecoration(color: widget.backgroundColor),
-            ),
+              decoration: widget.imageBackground!=null ? new BoxDecoration(
+                image: new DecorationImage(
+                  image: widget.imageBackground,
+                  fit: BoxFit.cover,
+                ),
+              ): BoxDecoration(color: widget.backgroundColor),),
             new Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
@@ -81,7 +88,7 @@ class _SplashScreenState extends State<SplashScreen> {
                           new CircleAvatar(
                             backgroundColor: Colors.transparent,
                             child: new Container(
-                              child: widget.image
+                                child: widget.image
                             ),
                             radius: widget.photoSize,
                           ),
@@ -104,12 +111,7 @@ class _SplashScreenState extends State<SplashScreen> {
                       Padding(
                         padding: const EdgeInsets.only(top: 20.0),
                       ),
-                      Text("Loading",style: widget.styleTextUnderTheLoader
-                      ),
-                      new Center(
-                        child: Text("Now",style: widget.styleTextUnderTheLoader
-                        ),
-                      ),
+                      widget.loadingText
                     ],
                   ),
                 ),
