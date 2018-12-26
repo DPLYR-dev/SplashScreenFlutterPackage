@@ -19,11 +19,13 @@ class _MyAppState extends State<MyApp> {
       seconds: 14,
       navigateAfterSeconds: new AfterSplash(),
       title: new Text('Welcome In SplashScreen',
-      style: new TextStyle(
-        fontWeight: FontWeight.bold,
-        fontSize: 20.0
-      ),),
+        style: new TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 20.0
+        ),
+      ),
       image: new Image.network('https://flutter.io/images/catalog-widget-placeholder.png'),
+      backgroundGradient: new LinearGradient(colors: [Colors.cyan, Colors.blue], begin: Alignment.topLeft, end: Alignment.bottomRight),
       backgroundColor: Colors.white,
       styleTextUnderTheLoader: new TextStyle(),
       photoSize: 100.0,
