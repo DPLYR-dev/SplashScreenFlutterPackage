@@ -1,6 +1,8 @@
 library splashscreen;
-import 'dart:core';
+
 import 'dart:async';
+import 'dart:core';
+
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -9,6 +11,7 @@ class SplashScreen extends StatefulWidget {
   final Color backgroundColor;
   final TextStyle styleTextUnderTheLoader;
   final dynamic navigateAfterSeconds;
+  final Future<dynamic> navigateAfterFuture;
   final double photoSize;
   final dynamic onClick;
   final Color loaderColor;
@@ -16,26 +19,26 @@ class SplashScreen extends StatefulWidget {
   final Text loadingText;
   final ImageProvider imageBackground;
   final Gradient gradientBackground;
-  SplashScreen(
-      {
-        this.loaderColor,
-        @required this.seconds,
-        this.photoSize,
-        this.onClick,
-        this.navigateAfterSeconds,
-        this.title = const Text(''),
-        this.backgroundColor = Colors.white,
-        this.styleTextUnderTheLoader = const TextStyle(
-            fontSize: 18.0,
-            fontWeight: FontWeight.bold,
-            color: Colors.black
-        ),
-        this.image,
-        this.loadingText  = const Text(""),
-        this.imageBackground,
-      	this.gradientBackground
-      }
-      );
+
+  SplashScreen({
+    this.loaderColor,
+    @required this.seconds,
+    this.photoSize,
+    this.onClick,
+    this.navigateAfterSeconds,
+    this.navigateAfterFuture = null,
+    this.title = const Text(''),
+    this.backgroundColor = Colors.white,
+    this.styleTextUnderTheLoader = const TextStyle(
+        fontSize: 18.0,
+        fontWeight: FontWeight.bold,
+        color: Colors.black
+    ),
+    this.image,
+    this.loadingText = const Text(""),
+    this.imageBackground,
+    this.gradientBackground
+  });
 
 
   @override
@@ -46,29 +49,51 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(
-        Duration(seconds: widget.seconds),
-            () {
-          if (widget.navigateAfterSeconds is String) {
-            // It's fairly safe to assume this is using the in-built material
-            // named route component
-            Navigator.of(context).pushReplacementNamed(widget.navigateAfterSeconds);
-          } else if (widget.navigateAfterSeconds is Widget) {
-            Navigator.of(context).pushReplacement(new MaterialPageRoute(builder: (BuildContext context) => widget.navigateAfterSeconds));
-          } else {
-            throw new ArgumentError(
-                'widget.navigateAfterSeconds must either be a String or Widget'
-            );
+
+    if (widget.navigateAfterFuture == null) {
+      Timer(
+          Duration(seconds: widget.seconds),
+              () {
+            if (widget.navigateAfterSeconds is String) {
+              // It's fairly safe to assume this is using the in-built material
+              // named route component
+              Navigator.of(context).pushReplacementNamed(
+                  widget.navigateAfterSeconds);
+            } else if (widget.navigateAfterSeconds is Widget) {
+              Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                  builder: (BuildContext context) =>
+                  widget.navigateAfterSeconds));
+            } else {
+              throw new ArgumentError(
+                  'widget.navigateAfterSeconds must either be a String or Widget'
+              );
+            }
           }
+      );
+    } else {
+      widget.navigateAfterFuture.then((navigateTo) {
+        if (navigateTo is String) {
+          // It's fairly safe to assume this is using the in-built material
+          // named route component
+          Navigator.of(context).pushReplacementNamed(navigateTo);
+        } else if (navigateTo is Widget) {
+          Navigator.of(context).pushReplacement(new MaterialPageRoute(
+              builder: (BuildContext context) => navigateTo));
+        } else {
+          throw new ArgumentError(
+              'widget.navigateAfterSeconds must either be a String or Widget'
+          );
         }
-    );
+      });
+    }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: new InkWell(
         onTap: widget.onClick,
-        child:new Stack(
+        child: new Stack(
           fit: StackFit.expand,
           children: <Widget>[
             new Container(
@@ -76,9 +101,9 @@ class _SplashScreenState extends State<SplashScreen> {
                 image: widget.imageBackground == null
                     ? null
                     : new DecorationImage(
-                        fit: BoxFit.cover,
-                        image: widget.imageBackground,
-                      ),
+                  fit: BoxFit.cover,
+                  image: widget.imageBackground,
+                ),
                 gradient: widget.gradientBackground,
                 color: widget.backgroundColor,
               ),
@@ -113,7 +138,8 @@ class _SplashScreenState extends State<SplashScreen> {
                     children: <Widget>[
 
                       CircularProgressIndicator(
-                        valueColor: new AlwaysStoppedAnimation<Color>(widget.loaderColor),
+                        valueColor: new AlwaysStoppedAnimation<Color>(
+                            widget.loaderColor),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 20.0),
