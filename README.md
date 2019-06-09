@@ -1,4 +1,5 @@
 # Splash Screen
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 
 * A small Splash Screen used for an intro for any flutter application easily using
 
@@ -101,3 +102,15 @@ class AfterSplash extends StatelessWidget {
   }
 }
 ```
+
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table><tr><td align="center"><a href="https://github.com/ahmedmgh67"><img src="https://avatars2.githubusercontent.com/u/37451499?v=4" width="100px;" alt="Ahmed Gamal"/><br /><sub><b>Ahmed Gamal</b></sub></a><br /><a href="#infra-ahmedmgh67" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/KarimMohamed2005/SplashScreenFlutterPackage/commits?author=ahmedmgh67" title="Tests">⚠️</a> <a href="https://github.com/KarimMohamed2005/SplashScreenFlutterPackage/commits?author=ahmedmgh67" title="Code">💻</a></td></tr></table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "ahmedmgh67",
+      "name": "Ahmed Gamal",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/37451499?v=4",
+      "profile": "https://github.com/ahmedmgh67",
+      "contributions": [
+        "infra",
+        "test",
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "SplashScreenFlutterPackage",
+  "projectOwner": "KarimMohamed2005",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
