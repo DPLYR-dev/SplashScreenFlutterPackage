@@ -15,6 +15,15 @@
         "test",
         "code"
       ]
+    },
+    {
+      "login": "zjinys",
+      "name": "zheng",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/66267?v=4",
+      "profile": "https://github.com/zjinys",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
