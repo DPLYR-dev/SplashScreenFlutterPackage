@@ -1,5 +1,5 @@
 # Splash Screen
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors)
 
 * A small Splash Screen used for an intro for any flutter application easily using
 
@@ -109,7 +109,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
-<table><tr><td align="center"><a href="https://github.com/ahmedmgh67"><img src="https://avatars2.githubusercontent.com/u/37451499?v=4" width="100px;" alt="Ahmed Gamal"/><br /><sub><b>Ahmed Gamal</b></sub></a><br /><a href="#infra-ahmedmgh67" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/KarimMohamed2005/SplashScreenFlutterPackage/commits?author=ahmedmgh67" title="Tests">⚠️</a> <a href="https://github.com/KarimMohamed2005/SplashScreenFlutterPackage/commits?author=ahmedmgh67" title="Code">💻</a></td><td align="center"><a href="https://github.com/zjinys"><img src="https://avatars3.githubusercontent.com/u/66267?v=4" width="100px;" alt="zheng"/><br /><sub><b>zheng</b></sub></a><br /><a href="https://github.com/KarimMohamed2005/SplashScreenFlutterPackage/commits?author=zjinys" title="Code">💻</a></td></tr></table>
+<table><tr><td align="center"><a href="https://github.com/ahmedmgh67"><img src="https://avatars2.githubusercontent.com/u/37451499?v=4" width="100px;" alt="Ahmed Gamal"/><br /><sub><b>Ahmed Gamal</b></sub></a><br /><a href="#infra-ahmedmgh67" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/KarimMohamed2005/SplashScreenFlutterPackage/commits?author=ahmedmgh67" title="Tests">⚠️</a> <a href="https://github.com/KarimMohamed2005/SplashScreenFlutterPackage/commits?author=ahmedmgh67" title="Code">💻</a></td><td align="center"><a href="https://github.com/zjinys"><img src="https://avatars3.githubusercontent.com/u/66267?v=4" width="100px;" alt="zheng"/><br /><sub><b>zheng</b></sub></a><br /><a href="https://github.com/KarimMohamed2005/SplashScreenFlutterPackage/commits?author=zjinys" title="Code">💻</a></td><td align="center"><a href="https://github.com/play0sm"><img src="https://avatars3.githubusercontent.com/u/25031940?v=4" width="100px;" alt="Mehmet Akif Baysal"/><br /><sub><b>Mehmet Akif Baysal</b></sub></a><br /><a href="https://github.com/KarimMohamed2005/SplashScreenFlutterPackage/commits?author=play0sm" title="Code">💻</a></td></tr></table>
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
