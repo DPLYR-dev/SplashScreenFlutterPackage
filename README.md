@@ -32,8 +32,7 @@ To use this package :
 As time based...
 
 ``` dart
-
-  new SplashScreen(
+      new SplashScreen(
       seconds: 14,
       navigateAfterSeconds: new AfterSplash(),
       title: new Text('Welcome In SplashScreen'),
@@ -41,23 +40,22 @@ As time based...
       backgroundColor: Colors.white,
       styleTextUnderTheLoader: new TextStyle(),
       photoSize: 100.0,
-      loaderColor: Colors.red);
-
+      loaderColor: Colors.red
+    );
 ```
 
 As futured based...
 
 ``` dart
-
-  new SplashScreen(
+      new SplashScreen(
       navigateAfterFuture: stateClass.loadProfile(),
       title: new Text('Welcome In SplashScreen'),
       image: new Image.asset('screenshot.png'),
       backgroundColor: Colors.white,
       styleTextUnderTheLoader: new TextStyle(),
       photoSize: 100.0,
-      loaderColor: Colors.red);
-
+      loaderColor: Colors.red
+    );
 ```
 
 
@@ -69,12 +67,12 @@ As time based...
 
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
-
-void main() {
+void main(){
   runApp(new MaterialApp(
     home: new MyApp(),
   ));
 }
+
 
 class MyApp extends StatefulWidget {
   @override
@@ -85,18 +83,20 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return new SplashScreen(
-        seconds: 14,
-        navigateAfterSeconds: new AfterSplash(),
-        title: new Text(
-          'Welcome In SplashScreen',
-          style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-        ),
-        image: new Image.network('https://i.imgur.com/TyCSG9A.png'),
-        backgroundColor: Colors.white,
-        styleTextUnderTheLoader: new TextStyle(),
-        photoSize: 100.0,
-        onClick: () => print("Flutter Egypt"),
-        loaderColor: Colors.red);
+      seconds: 14,
+      navigateAfterSeconds: new AfterSplash(),
+      title: new Text('Welcome In SplashScreen',
+      style: new TextStyle(
+        fontWeight: FontWeight.bold,
+        fontSize: 20.0
+      ),),
+      image: new Image.network('https://i.imgur.com/TyCSG9A.png'),
+      backgroundColor: Colors.white,
+      styleTextUnderTheLoader: new TextStyle(),
+      photoSize: 100.0,
+      onClick: ()=>print("Flutter Egypt"),
+      loaderColor: Colors.red
+    );
   }
 }
 
@@ -105,18 +105,20 @@ class AfterSplash extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-          title: new Text("Welcome In SplashScreen Package"),
-          automaticallyImplyLeading: false),
+      title: new Text("Welcome In SplashScreen Package"),
+      automaticallyImplyLeading: false
+      ),
       body: new Center(
-        child: new Text(
-          "Done!",
-          style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0),
-        ),
+        child: new Text("Done!",
+        style: new TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 30.0
+        ),),
+
       ),
     );
   }
 }
-
 ```
 
 As future based...
@@ -125,12 +127,12 @@ As future based...
 
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
-
-void main() {
+void main(){
   runApp(new MaterialApp(
     home: new MyApp(),
   ));
 }
+
 
 class MyApp extends StatefulWidget {
   @override
@@ -138,26 +140,30 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Future<Widget> loadFromFuture() async {
-    // <fetch some data from server. ex. login>
 
-    return Future.value(new AfterSplash());
+  Future<Widget> loadFromFuture() async {
+  
+  <fetch some data from server. ex. login>
+  
+     return Future.value(new AfterSplash());
   }
 
   @override
   Widget build(BuildContext context) {
     return new SplashScreen(
-        navigateAfterFuture: loadFromFuture(),
-        title: new Text(
-          'Welcome In SplashScreen',
-          style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-        ),
-        image: new Image.network('https://i.imgur.com/TyCSG9A.png'),
-        backgroundColor: Colors.white,
-        styleTextUnderTheLoader: new TextStyle(),
-        photoSize: 100.0,
-        onClick: () => print("Flutter Egypt"),
-        loaderColor: Colors.red);
+      navigateAfterFuture: loadFromFuture(),
+      title: new Text('Welcome In SplashScreen',
+      style: new TextStyle(
+        fontWeight: FontWeight.bold,
+        fontSize: 20.0
+      ),),
+      image: new Image.network('https://i.imgur.com/TyCSG9A.png'),
+      backgroundColor: Colors.white,
+      styleTextUnderTheLoader: new TextStyle(),
+      photoSize: 100.0,
+      onClick: ()=>print("Flutter Egypt"),
+      loaderColor: Colors.red
+    );
   }
 }
 
@@ -166,16 +172,18 @@ class AfterSplash extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-          title: new Text("Welcome In SplashScreen Package"),
-          automaticallyImplyLeading: false),
+      title: new Text("Welcome In SplashScreen Package"),
+      automaticallyImplyLeading: false
+      ),
       body: new Center(
-        child: new Text(
-          "Done!",
-          style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0),
-        ),
+        child: new Text("Done!",
+        style: new TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 30.0
+        ),),
+
       ),
     );
   }
 }
-
 ```
