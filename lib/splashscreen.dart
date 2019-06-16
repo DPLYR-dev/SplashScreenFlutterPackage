@@ -16,6 +16,7 @@ class SplashScreen extends StatefulWidget {
   final Text loadingText;
   final ImageProvider imageBackground;
   final Gradient gradientBackground;
+  final bool useLoader;
   SplashScreen(
       {
         this.loaderColor,
@@ -33,7 +34,8 @@ class SplashScreen extends StatefulWidget {
         this.image,
         this.loadingText  = const Text(""),
         this.imageBackground,
-      	this.gradientBackground
+      	this.gradientBackground,
+        this.useLoader = true,
       }
       );
 
@@ -112,7 +114,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
 
-                      CircularProgressIndicator(
+                      !widget.useLoader ? Container() :CircularProgressIndicator(
                         valueColor: new AlwaysStoppedAnimation<Color>(widget.loaderColor),
                       ),
                       Padding(
