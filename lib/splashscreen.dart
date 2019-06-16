@@ -1,17 +1,10 @@
 library splashscreen;
-
-import 'dart:async';
-import 'dart:core';
-
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
-  final int seconds;
   final Text title;
   final Color backgroundColor;
   final TextStyle styleTextUnderTheLoader;
-  final dynamic navigateAfterSeconds;
-  final Future<dynamic> navigateAfterFuture;
   final double photoSize;
   final dynamic onClick;
   final Color loaderColor;
@@ -19,6 +12,7 @@ class SplashScreen extends StatefulWidget {
   final Text loadingText;
   final ImageProvider imageBackground;
   final Gradient gradientBackground;
+
 
   SplashScreen(
       {this.loaderColor,
@@ -43,38 +37,9 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
+    var route;
     super.initState();
 
-    if (widget.navigateAfterFuture == null) {
-      Timer(Duration(seconds: widget.seconds), () {
-        if (widget.navigateAfterSeconds is String) {
-          // It's fairly safe to assume this is using the in-built material
-          // named route component
-          Navigator.of(context)
-              .pushReplacementNamed(widget.navigateAfterSeconds);
-        } else if (widget.navigateAfterSeconds is Widget) {
-          Navigator.of(context).pushReplacement(new MaterialPageRoute(
-              builder: (BuildContext context) => widget.navigateAfterSeconds));
-        } else {
-          throw new ArgumentError(
-              'widget.navigateAfterSeconds must either be a String or Widget');
-        }
-      });
-    } else {
-      widget.navigateAfterFuture.then((navigateTo) {
-        if (navigateTo is String) {
-          // It's fairly safe to assume this is using the in-built material
-          // named route component
-          Navigator.of(context).pushReplacementNamed(navigateTo);
-        } else if (navigateTo is Widget) {
-          Navigator.of(context).pushReplacement(new MaterialPageRoute(
-              builder: (BuildContext context) => navigateTo));
-        } else {
-          throw new ArgumentError(
-              'widget.navigateAfterSeconds must either be a String or Widget');
-        }
-      });
-    }
   }
 
   @override
@@ -90,9 +55,9 @@ class _SplashScreenState extends State<SplashScreen> {
                 image: widget.imageBackground == null
                     ? null
                     : new DecorationImage(
-                        fit: BoxFit.cover,
-                        image: widget.imageBackground,
-                      ),
+                  fit: BoxFit.cover,
+                  image: widget.imageBackground,
+                ),
                 gradient: widget.gradientBackground,
                 color: widget.backgroundColor,
               ),
