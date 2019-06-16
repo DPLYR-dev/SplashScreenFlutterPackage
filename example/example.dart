@@ -13,19 +13,26 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+
+  loadWidget() async{
+    return await new Future<Widget>.delayed(
+      Duration(
+        seconds: 1
+      ),() => AfterSplash()
+    ) ;
+  }
+
   @override
   Widget build(BuildContext context) {
     return new SplashScreen(
-      seconds: 14,
-      navigateAfterSeconds: new AfterSplash(),
       title: new Text('Welcome In SplashScreen',
         style: new TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 20.0
         ),
       ),
+      loadingData: loadWidget,
       image: new Image.network('https://flutter.io/images/catalog-widget-placeholder.png'),
-      backgroundGradient: new LinearGradient(colors: [Colors.cyan, Colors.blue], begin: Alignment.topLeft, end: Alignment.bottomRight),
       backgroundColor: Colors.white,
       styleTextUnderTheLoader: new TextStyle(),
       photoSize: 100.0,
