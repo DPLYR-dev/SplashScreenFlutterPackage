@@ -30,6 +30,7 @@ To use this package :
 
 ### How to use
 
+As time based...
 
 ``` dart
       new SplashScreen(
@@ -44,7 +45,25 @@ To use this package :
     );
 ```
 
+As futured based...
+
+``` dart
+      new SplashScreen(
+      navigateAfterFuture: stateClass.loadProfile(),
+      title: new Text('Welcome In SplashScreen'),
+      image: new Image.asset('screenshot.png'),
+      backgroundColor: Colors.white,
+      styleTextUnderTheLoader: new TextStyle(),
+      photoSize: 100.0,
+      loaderColor: Colors.red
+    );
+```
+
+
 ## Example
+
+As time based...
+
 ``` dart
 
 import 'package:flutter/material.dart';
@@ -103,14 +122,3 @@ class AfterSplash extends StatelessWidget {
 }
 ```
 
-## Contributors
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
-<table><tr><td align="center"><a href="https://github.com/ahmedmgh67"><img src="https://avatars2.githubusercontent.com/u/37451499?v=4" width="100px;" alt="Ahmed Gamal"/><br /><sub><b>Ahmed Gamal</b></sub></a><br /><a href="#infra-ahmedmgh67" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/KarimMohamed2005/SplashScreenFlutterPackage/commits?author=ahmedmgh67" title="Tests">⚠️</a> <a href="https://github.com/KarimMohamed2005/SplashScreenFlutterPackage/commits?author=ahmedmgh67" title="Code">💻</a></td><td align="center"><a href="https://github.com/zjinys"><img src="https://avatars3.githubusercontent.com/u/66267?v=4" width="100px;" alt="zheng"/><br /><sub><b>zheng</b></sub></a><br /><a href="https://github.com/KarimMohamed2005/SplashScreenFlutterPackage/commits?author=zjinys" title="Code">💻</a></td><td align="center"><a href="https://github.com/play0sm"><img src="https://avatars3.githubusercontent.com/u/25031940?v=4" width="100px;" alt="Mehmet Akif Baysal"/><br /><sub><b>Mehmet Akif Baysal</b></sub></a><br /><a href="https://github.com/KarimMohamed2005/SplashScreenFlutterPackage/commits?author=play0sm" title="Code">💻</a></td></tr></table>
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
