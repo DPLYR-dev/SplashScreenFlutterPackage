@@ -102,3 +102,62 @@ class AfterSplash extends StatelessWidget {
   }
 }
 ```
+
+
+### Animate the main image with the hero animation
+The main image has this tag attached to it `splashscreenImage`. Add it to whatever page you'll navigate to. This will animate the main Image to the same image you put in another page
+
+
+
+### Adding a custom page tranistion
+
+You can use the `pageRoute` to do just this. Here's an example
+
+```dart
+
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => new _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return new SplashScreen(
+      seconds: 14,
+      title: new Text('Welcome In SplashScreen',
+        style: new TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 20.0
+        ),
+      ),
+      image: new Image.network('https://flutter.io/images/catalog-widget-placeholder.png'),
+      gradientBackground: new LinearGradient(colors: [Colors.cyan, Colors.blue], begin: Alignment.topLeft, end: Alignment.bottomRight),
+      backgroundColor: Colors.white,
+      styleTextUnderTheLoader: new TextStyle(),
+      photoSize: 100.0,
+      onClick: ()=>print("Flutter Egypt"),
+      loaderColor: Colors.red,
+      pageRoute: _createRoute()
+    );
+  }
+}
+
+Route _createRoute() {
+  return PageRouteBuilder(
+    pageBuilder: (context, animation, secondaryAnimation) => Page2(),
+    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+      var begin = Offset(0.0, 1.0);
+      var end = Offset.zero;
+      var curve = Curves.ease;
+
+      var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+      return SlideTransition(
+        position: animation.drive(tween),
+        child: child,
+      );
+    },
+  );
+}
+```
