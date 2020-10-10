@@ -96,8 +96,11 @@ class _SplashScreenState extends State<SplashScreen> {
                         children: <Widget>[
                           new CircleAvatar(
                             backgroundColor: Colors.transparent,
-                            child: new Container(
-                                child: widget.image
+                            child: Hero(
+                              tag: "splashscreenImage",
+                                child: new Container(
+                                  child: widget.image
+                              ),
                             ),
                             radius: widget.photoSize,
                           ),
