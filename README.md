@@ -6,10 +6,9 @@
 
 * It 's Now Very Simple And Easy To Use 
 * Coming Soon Will Add A Greater Functions 
-* For Any information Send Message To Me On => monkey4gamesmmm@gmail.com
+* For Any information Send Message To Me On => karim@dplyr.dev
 
-# Closed ------------------------------------------------------------------------
-
+## This repo has been unarchived now and we'll start accepting issues and pull requests now, thank you
 
 ### ScreenShot
 ![screenshot description (alt)](screenshot.png)
