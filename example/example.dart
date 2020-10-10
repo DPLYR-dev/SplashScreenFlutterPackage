@@ -25,7 +25,7 @@ class _MyAppState extends State<MyApp> {
         ),
       ),
       image: new Image.network('https://flutter.io/images/catalog-widget-placeholder.png'),
-      backgroundGradient: new LinearGradient(colors: [Colors.cyan, Colors.blue], begin: Alignment.topLeft, end: Alignment.bottomRight),
+      gradientBackground: new LinearGradient(colors: [Colors.cyan, Colors.blue], begin: Alignment.topLeft, end: Alignment.bottomRight),
       backgroundColor: Colors.white,
       styleTextUnderTheLoader: new TextStyle(),
       photoSize: 100.0,
