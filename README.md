@@ -1,5 +1,4 @@
 # Splash Screen
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors)
 
 * A small Splash Screen used for an intro for any flutter application easily using
 
@@ -7,7 +6,7 @@
 
 * It 's Now Very Simple And Easy To Use 
 * Coming Soon Will Add A Greater Functions 
-* For Any information Send Message To Me On => karimmohamed200510@gmail.com
+* For Any information Send Message To Me On => monkey4gamesmmm@gmail.com
 
 # Closed ------------------------------------------------------------------------
 
@@ -32,7 +31,6 @@ To use this package :
 
 ### How to use
 
-As time based...
 
 ``` dart
       new SplashScreen(
@@ -47,25 +45,7 @@ As time based...
     );
 ```
 
-As futured based...
-
-``` dart
-      new SplashScreen(
-      navigateAfterFuture: stateClass.loadProfile(),
-      title: new Text('Welcome In SplashScreen'),
-      image: new Image.asset('screenshot.png'),
-      backgroundColor: Colors.white,
-      styleTextUnderTheLoader: new TextStyle(),
-      photoSize: 100.0,
-      loaderColor: Colors.red
-    );
-```
-
-
 ## Example
-
-As time based...
-
 ``` dart
 
 import 'package:flutter/material.dart';
@@ -123,4 +103,3 @@ class AfterSplash extends StatelessWidget {
   }
 }
 ```
-
