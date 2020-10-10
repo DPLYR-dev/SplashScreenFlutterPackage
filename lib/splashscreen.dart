@@ -5,22 +5,53 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
+  /// Seconds to navigate after for time based navigation
   final int seconds;
+
+  /// App title, shown in the middle of screen in case of no image available
   final Text title;
+
+  /// Page background color
   final Color backgroundColor;
+
+  /// Style for the laodertext
   final TextStyle styleTextUnderTheLoader;
+
+  /// The page where you want to navigate if you have chosen time based navigation
   final dynamic navigateAfterSeconds;
+
+  /// Main image size
   final double photoSize;
+
+  /// Triggered if the user clicks the screen
   final dynamic onClick;
+
+  /// Loader color
   final Color loaderColor;
+
+  /// Main image mainly used for logos and like that
   final Image image;
+
+  /// Loading text, default: "Loading"
   final Text loadingText;
+
+  ///  Background image for the entire screen
   final ImageProvider imageBackground;
+
+  /// Background gradient for the entire screen
   final Gradient gradientBackground;
+
+  /// Whether to display a loader or not
   final bool useLoader;
+
+  /// Custom page route if you have a custom transition you want to play
   final Route pageRoute;
+
+  /// expects a function that returns a future, when this future is returned it will navigate
+  final Future<dynamic> navigateAfterFuture;
   SplashScreen({
     this.loaderColor,
+    this.navigateAfterFuture,
     @required this.seconds,
     this.photoSize,
     this.pageRoute,
@@ -45,19 +76,41 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: widget.seconds), () {
-      if (widget.navigateAfterSeconds is String) {
-        // It's fairly safe to assume this is using the in-built material
-        // named route component
-        Navigator.of(context).pushReplacementNamed(widget.navigateAfterSeconds);
-      } else if (widget.navigateAfterSeconds is Widget) {
-        Navigator.of(context).pushReplacement(widget.pageRoute != null ? widget.pageRoute :new MaterialPageRoute(
-            builder: (BuildContext context) => widget.navigateAfterSeconds));
-      } else {
-        throw new ArgumentError(
-            'widget.navigateAfterSeconds must either be a String or Widget');
-      }
-    });
+    if (widget.navigateAfterFuture == null) {
+      Timer(Duration(seconds: widget.seconds), () {
+        if (widget.navigateAfterSeconds is String) {
+          // It's fairly safe to assume this is using the in-built material
+          // named route component
+          Navigator.of(context)
+              .pushReplacementNamed(widget.navigateAfterSeconds);
+        } else if (widget.navigateAfterSeconds is Widget) {
+          Navigator.of(context).pushReplacement(widget.pageRoute != null
+              ? widget.pageRoute
+              : new MaterialPageRoute(
+                  builder: (BuildContext context) =>
+                      widget.navigateAfterSeconds));
+        } else {
+          throw new ArgumentError(
+              'widget.navigateAfterSeconds must either be a String or Widget');
+        }
+      });
+    } else {
+      widget.navigateAfterFuture.then((navigateTo) {
+        if (navigateTo is String) {
+          // It's fairly safe to assume this is using the in-built material
+          // named route component
+          Navigator.of(context).pushReplacementNamed(navigateTo);
+        } else if (navigateTo is Widget) {
+          Navigator.of(context).pushReplacement(widget.pageRoute != null
+              ? widget.pageRoute
+              : new MaterialPageRoute(
+                  builder: (BuildContext context) => navigateTo));
+        } else {
+          throw new ArgumentError(
+              'widget.navigateAfterFuture must either be a String or Widget');
+        }
+      });
+    }
   }
 
   @override
