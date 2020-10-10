@@ -18,10 +18,12 @@ class SplashScreen extends StatefulWidget {
   final ImageProvider imageBackground;
   final Gradient gradientBackground;
   final bool useLoader;
+  final Route pageRoute;
   SplashScreen({
     this.loaderColor,
     @required this.seconds,
     this.photoSize,
+    this.pageRoute,
     this.onClick,
     this.navigateAfterSeconds,
     this.title = const Text(''),
@@ -49,7 +51,7 @@ class _SplashScreenState extends State<SplashScreen> {
         // named route component
         Navigator.of(context).pushReplacementNamed(widget.navigateAfterSeconds);
       } else if (widget.navigateAfterSeconds is Widget) {
-        Navigator.of(context).pushReplacement(new MaterialPageRoute(
+        Navigator.of(context).pushReplacement(widget.pageRoute != null ? widget.pageRoute :new MaterialPageRoute(
             builder: (BuildContext context) => widget.navigateAfterSeconds));
       } else {
         throw new ArgumentError(
