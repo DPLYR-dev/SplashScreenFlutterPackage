@@ -32,16 +32,16 @@ To use this package :
 
 
 ``` dart
-      new SplashScreen(
-      seconds: 14,
-      navigateAfterSeconds: new AfterSplash(),
-      title: new Text('Welcome In SplashScreen'),
-      image: new Image.asset('screenshot.png'),
-      backgroundColor: Colors.white,
-      styleTextUnderTheLoader: new TextStyle(),
-      photoSize: 100.0,
-      loaderColor: Colors.red
-    );
+new SplashScreen(
+  seconds: 14,
+  navigateAfterSeconds: new AfterSplash(),
+  title: new Text('Welcome In SplashScreen'),
+  image: new Image.asset('screenshot.png'),
+  backgroundColor: Colors.white,
+  styleTextUnderTheLoader: new TextStyle(),
+  photoSize: 100.0,
+  loaderColor: Colors.red
+);
 ```
 
 ## Example

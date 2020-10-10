@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
-void main(){
+
+void main() {
   runApp(new MaterialApp(
     home: new MyApp(),
   ));
 }
-
 
 class MyApp extends StatefulWidget {
   @override
@@ -18,13 +18,12 @@ class _MyAppState extends State<MyApp> {
     return new SplashScreen(
       seconds: 14,
       navigateAfterSeconds: new AfterSplash(),
-      title: new Text('Welcome In SplashScreen',
-        style: new TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 20.0
-        ),
+      title: new Text(
+        'Welcome In SplashScreen',
+        style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
       ),
-      image: new Image.network('https://flutter.io/images/catalog-widget-placeholder.png'),
+      image: new Image.network(
+          'https://flutter.io/images/catalog-widget-placeholder.png'),
       backgroundColor: Colors.white,
       loaderColor: Colors.red,
     );
@@ -38,14 +37,12 @@ class AfterSplash extends StatelessWidget {
       appBar: new AppBar(
         title: new Text("Welcome In SplashScreen Package"),
         automaticallyImplyLeading: false,
-        ),
+      ),
       body: new Center(
-        child: new Text("Succeeded!",
-        style: new TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 30.0
-        ),),
-
+        child: new Text(
+          "Succeeded!",
+          style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0),
+        ),
       ),
     );
   }
