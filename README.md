@@ -128,7 +128,7 @@ class _MyAppState extends State<MyApp> {
 
   Future<Widget> loadFromFuture() async {
   
-  <fetch some data from server. ex. login>
+  // <fetch data from server. ex. login>
   
      return Future.value(new AfterSplash());
   }
