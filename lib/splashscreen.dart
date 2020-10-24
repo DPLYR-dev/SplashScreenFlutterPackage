@@ -47,6 +47,9 @@ class SplashScreen extends StatefulWidget {
   /// Custom page route if you have a custom transition you want to play
   final Route pageRoute;
 
+  /// RouteSettings name for pushing a route with custom name (if left out in MaterialApp route names) to navigator stack (Contribution by Ramis Mustafa)
+  final String routeName;
+
   /// expects a function that returns a future, when this future is returned it will navigate
   final Future<dynamic> navigateAfterFuture;
   SplashScreen({
@@ -66,6 +69,7 @@ class SplashScreen extends StatefulWidget {
     this.imageBackground,
     this.gradientBackground,
     this.useLoader = true,
+    this.routeName,
   });
 
   @override
@@ -76,6 +80,8 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+    if (!(widget.routeName != null && widget.routeName is String && "${widget.routeName[0]}" == "/"))
+      throw new ArgumentError("widget.routeName must be a String beginning with forward slash (/)");
     if (widget.navigateAfterFuture == null) {
       Timer(Duration(seconds: widget.seconds), () {
         if (widget.navigateAfterSeconds is String) {
@@ -87,6 +93,7 @@ class _SplashScreenState extends State<SplashScreen> {
           Navigator.of(context).pushReplacement(widget.pageRoute != null
               ? widget.pageRoute
               : new MaterialPageRoute(
+                  settings: widget.routeName != null ? RouteSettings(name: "${widget.routeName}") : null,
                   builder: (BuildContext context) =>
                       widget.navigateAfterSeconds));
         } else {
@@ -104,6 +111,7 @@ class _SplashScreenState extends State<SplashScreen> {
           Navigator.of(context).pushReplacement(widget.pageRoute != null
               ? widget.pageRoute
               : new MaterialPageRoute(
+                  settings: widget.routeName != null ? RouteSettings(name: "${widget.routeName}") : null,
                   builder: (BuildContext context) => navigateTo));
         } else {
           throw new ArgumentError(
