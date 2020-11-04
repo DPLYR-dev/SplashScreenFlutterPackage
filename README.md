@@ -2,8 +2,6 @@
 
 * A small Splash Screen used for an intro for any flutter application easily using
 
-
-### This repo has been unarchived now and we'll start accepting issues and pull requests now, thank you
 ### Currently Supported by awesome [DPLYR](https://dplyr.dev)
 ![image (alt)](https://i.imgur.com/D1WG1Bo.png&s=50)
 * [DPLYR](https://dplyr.dev) is a new generation of cloud platforms and aims to help developers in their road with open source contributions, and at the end we can say thanks.
