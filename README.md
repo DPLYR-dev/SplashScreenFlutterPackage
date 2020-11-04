@@ -1,4 +1,4 @@
-# Splash Screen
+# [Splash Screen](https://pub.dev/packages/splashscreen)
 
 * A small Splash Screen used for an intro for any flutter application easily using
 
