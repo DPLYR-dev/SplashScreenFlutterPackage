@@ -220,10 +220,15 @@ Route _createRoute() {
 }
 ```
 
-### Similar Packages (also supported by [DPLYR](https://dplyr.dev))
+### All Supported Projects by [DPLYR](https://dplyr.dev)
+* [Splash Screen - Flutter](https://github.com/DPLYR-dev/SplashScreenFlutterPackage)
+  <br> a flutter package created to show simple splashscreen
 
-* [In App Call Alert](https://github.com/KarimMohamed20/InAppCallAlert)
-  package created recently to show call alert with sound
-  
+* [In App Call Alert - Flutter](https://github.com/DPLYR-dev/InAppCallAlert)
+  <br> a flutter package created recently to show call alert with sound
+
+* [File Manager](https://github.com/DPLYR-dev/file-manager)
+  <br> a php project created to manage machines/servers through ftp servers
+
 
 ### Created by [Karim Mohamed](https://github.com/KarimMohamed20)
