@@ -1,5 +1,5 @@
 name: splashscreen
-description: A small splashscreen used for an intro for any flutter application easily using
+description: A splashscreen package to be used for an intro for any flutter application easily with a lot of customization
 version: 1.3.0
 author: Karim Mohamed <karim@dplyr.dev>
 homepage: https://github.com/KarimMohamed2005/SplashScreenFlutterPackage
