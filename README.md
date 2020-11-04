@@ -8,7 +8,7 @@
 ![image (alt)](https://i.imgur.com/D1WG1Bo.png&s=50)
 * [DPLYR](https://dplyr.dev) is a new generation of cloud platforms and aims to help developers in their road with open source contributions, and at the end we can say thanks.
 
-### ScreenShot
+### Screenshots
 ![screenshot description (alt)](screenshot.png)
 
 ## Usage
