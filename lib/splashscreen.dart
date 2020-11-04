@@ -80,8 +80,11 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    if (!(widget.routeName != null && widget.routeName is String && "${widget.routeName[0]}" == "/"))
-      throw new ArgumentError("widget.routeName must be a String beginning with forward slash (/)");
+    if (!(widget.routeName != null &&
+        widget.routeName is String &&
+        "${widget.routeName[0]}" == "/"))
+      throw new ArgumentError(
+          "widget.routeName must be a String beginning with forward slash (/)");
     if (widget.navigateAfterFuture == null) {
       Timer(Duration(seconds: widget.seconds), () {
         if (widget.navigateAfterSeconds is String) {
@@ -93,7 +96,9 @@ class _SplashScreenState extends State<SplashScreen> {
           Navigator.of(context).pushReplacement(widget.pageRoute != null
               ? widget.pageRoute
               : new MaterialPageRoute(
-                  settings: widget.routeName != null ? RouteSettings(name: "${widget.routeName}") : null,
+                  settings: widget.routeName != null
+                      ? RouteSettings(name: "${widget.routeName}")
+                      : null,
                   builder: (BuildContext context) =>
                       widget.navigateAfterSeconds));
         } else {
@@ -111,7 +116,9 @@ class _SplashScreenState extends State<SplashScreen> {
           Navigator.of(context).pushReplacement(widget.pageRoute != null
               ? widget.pageRoute
               : new MaterialPageRoute(
-                  settings: widget.routeName != null ? RouteSettings(name: "${widget.routeName}") : null,
+                  settings: widget.routeName != null
+                      ? RouteSettings(name: "${widget.routeName}")
+                      : null,
                   builder: (BuildContext context) => navigateTo));
         } else {
           throw new ArgumentError(
