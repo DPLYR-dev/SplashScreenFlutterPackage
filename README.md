@@ -1,6 +1,6 @@
 # [Splash Screen](https://pub.dev/packages/splashscreen)
 
-* A small Splash Screen used for an intro for any flutter application easily using
+* A splashscreen package to be used for an intro for any flutter application easily with a lot of customization
 
 ### Currently Supported by awesome [DPLYR](https://dplyr.dev)
 ![image (alt)](https://i.imgur.com/D1WG1Bo.png&s=50)
