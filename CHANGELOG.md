@@ -1,3 +1,5 @@
+## [1.3.3] - Edit README.md
+  * Add DPLYR Credits to README.md
 ## [1.3.2] - Raise pubscore
   * Change pubspec description and format files
 ## [1.3.1] - Edit README.md
