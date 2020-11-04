@@ -228,4 +228,4 @@ Route _createRoute() {
 ### Similar Packages
 
 * [In App Call Alert](https://github.com/KarimMohamed20/InAppCallAlert)
-  package created recently to show an call alert with sound
+  package created recently to show call alert with sound
