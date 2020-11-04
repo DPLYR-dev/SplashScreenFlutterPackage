@@ -2,13 +2,11 @@
 
 * A small Splash Screen used for an intro for any flutter application easily using
 
-## For iOS And Android 
-
-* It 's Now Very Simple And Easy To Use 
-* Coming Soon Will Add A Greater Functions 
-* For Any information Send Message To Me On => karim@dplyr.dev
 
 ## This repo has been unarchived now and we'll start accepting issues and pull requests now, thank you
+### Currently Supported by awesome [DPLYR](https://dplyr.dev)
+![image (alt)](https://i.imgur.com/D1WG1Bo.png&s=50)
+* [DPLYR](https://dplyr.dev) is a new generation of cloud platforms and aims to help developers in their road with open source contributions, and at the end we can say thanks.
 
 ### ScreenShot
 ![screenshot description (alt)](screenshot.png)
@@ -224,8 +222,10 @@ Route _createRoute() {
 }
 ```
 
-
-### Similar Packages
+### Similar Packages (also supported by [DPLYR](https://dplyr.dev))
 
 * [In App Call Alert](https://github.com/KarimMohamed20/InAppCallAlert)
   package created recently to show call alert with sound
+  
+
+### Created by [Karim Mohamed](https://github.com/KarimMohamed20)
