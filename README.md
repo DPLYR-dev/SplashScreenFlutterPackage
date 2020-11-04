@@ -229,6 +229,17 @@ Route _createRoute() {
 
 * [File Manager](https://github.com/DPLYR-dev/file-manager)
   <br> a php project created to manage machines/servers through ftp servers
+  
+* [Countries Js](https://github.com/DPLYR-dev/file-manager)
+  <br> a javascript project created for retrieving country details with flexibility.
+  
+* [Block temp mails](https://github.com/DPLYR-dev/block-temp-emails)
+  <br> a javascript api to prevent temporary emails from signing up on your website. Super easy to use
+  
+* [Disposable Emails List](https://github.com/DPLYR-dev/disposable-emails-list-domains-spam)
+  <br> a python script to generate the temporary and spam doamins to prevent them and you can block them through this API [Block temp mails](https://github.com/DPLYR-dev/block-temp-emails)
 
+### About DPLYR
+[DPLYR](https://www.dplyr.dev) is a SaaS tool that helps developers just like you to deploy their web apps more easily. It supports deploying Node.js apps with MongoDB, MySQL or PostgreSQL databases all for free. Go now  to [www.dplyr.dev](https://www.dplyr.dev) and create a free account.
 
 ### Created by [Karim Mohamed](https://github.com/KarimMohamed20)
