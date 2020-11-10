@@ -80,9 +80,9 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    if (!(widget.routeName != null &&
+    if (widget.routeName != null &&
         widget.routeName is String &&
-        "${widget.routeName[0]}" == "/"))
+        "${widget.routeName[0]}" != "/")
       throw new ArgumentError(
           "widget.routeName must be a String beginning with forward slash (/)");
     if (widget.navigateAfterFuture == null) {
