@@ -1,3 +1,5 @@
+## [1.3.4] - Fix Route Name
+  * Fix routeName issue
 ## [1.3.3] - Edit README.md
   * Add DPLYR Credits to README.md
 ## [1.3.2] - Raise pubscore
