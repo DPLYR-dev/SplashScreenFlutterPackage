@@ -226,7 +226,7 @@ Route _createRoute() {
   <br> a flutter package created to show simple splashscreen
 
 * [In App Call Alert - Flutter](https://github.com/DPLYR-dev/InAppCallAlert)
-  <br> a flutter package created recently to show call alert with sound
+  <br> a flutter package created to show call alert with sound
 
 * [File Manager](https://github.com/DPLYR-dev/file-manager)
   <br> a php project created to manage machines/servers through ftp servers
