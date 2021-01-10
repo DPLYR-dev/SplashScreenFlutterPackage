@@ -36,6 +36,9 @@ class SplashScreen extends StatefulWidget {
   /// Loading text, default: "Loading"
   final Text loadingText;
 
+  /// Padding for long Loading text, default: EdgeInsets.all(0)
+  final EdgeInsets loadingTextPadding;
+
   ///  Background image for the entire screen
   final ImageProvider imageBackground;
 
@@ -66,10 +69,11 @@ class SplashScreen extends StatefulWidget {
     this.navigateAfterSeconds,
     this.title = const Text(''),
     this.backgroundColor = Colors.white,
-    this.styleTextUnderTheLoader =
-        const TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.black),
+    this.styleTextUnderTheLoader = const TextStyle(
+        fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.black),
     this.image,
     this.loadingText = const Text(""),
+    this.loadingTextPadding = const EdgeInsets.only(top: 10.0),
     this.imageBackground,
     this.gradientBackground,
     this.useLoader = true,
@@ -82,6 +86,7 @@ class SplashScreen extends StatefulWidget {
           Color backgroundColor,
           double photoSize,
           Text loadingText,
+          EdgeInsets loadingTextPadding,
           Image image,
           Route pageRoute,
           dynamic onClick,
@@ -97,6 +102,7 @@ class SplashScreen extends StatefulWidget {
         seconds: seconds,
         photoSize: photoSize,
         loadingText: loadingText,
+        loadingTextPadding: loadingTextPadding,
         backgroundColor: backgroundColor,
         image: image,
         pageRoute: pageRoute,
@@ -116,6 +122,7 @@ class SplashScreen extends StatefulWidget {
           Color backgroundColor,
           double photoSize,
           Text loadingText,
+          EdgeInsets loadingTextPadding,
           Image image,
           Route pageRoute,
           dynamic onClick,
@@ -131,6 +138,7 @@ class SplashScreen extends StatefulWidget {
         navigateAfterFuture: navigateAfterFuture,
         photoSize: photoSize,
         loadingText: loadingText,
+        loadingTextPadding: loadingTextPadding,
         backgroundColor: backgroundColor,
         image: image,
         pageRoute: pageRoute,
@@ -152,24 +160,31 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    if (widget.routeName != null && widget.routeName is String && "${widget.routeName[0]}" != "/") {
-      throw new ArgumentError("widget.routeName must be a String beginning with forward slash (/)");
+    if (widget.routeName != null &&
+        widget.routeName is String &&
+        "${widget.routeName[0]}" != "/") {
+      throw new ArgumentError(
+          "widget.routeName must be a String beginning with forward slash (/)");
     }
     if (widget.navigateAfterFuture == null) {
       Timer(Duration(seconds: widget.seconds), () {
         if (widget.navigateAfterSeconds is String) {
           // It's fairly safe to assume this is using the in-built material
           // named route component
-          Navigator.of(context).pushReplacementNamed(widget.navigateAfterSeconds);
+          Navigator.of(context)
+              .pushReplacementNamed(widget.navigateAfterSeconds);
         } else if (widget.navigateAfterSeconds is Widget) {
           Navigator.of(context).pushReplacement(widget.pageRoute != null
               ? widget.pageRoute
               : new MaterialPageRoute(
-                  settings:
-                      widget.routeName != null ? RouteSettings(name: "${widget.routeName}") : null,
-                  builder: (BuildContext context) => widget.navigateAfterSeconds));
+                  settings: widget.routeName != null
+                      ? RouteSettings(name: "${widget.routeName}")
+                      : null,
+                  builder: (BuildContext context) =>
+                      widget.navigateAfterSeconds));
         } else {
-          throw new ArgumentError('widget.navigateAfterSeconds must either be a String or Widget');
+          throw new ArgumentError(
+              'widget.navigateAfterSeconds must either be a String or Widget');
         }
       });
     } else {
@@ -182,11 +197,13 @@ class _SplashScreenState extends State<SplashScreen> {
           Navigator.of(context).pushReplacement(widget.pageRoute != null
               ? widget.pageRoute
               : new MaterialPageRoute(
-                  settings:
-                      widget.routeName != null ? RouteSettings(name: "${widget.routeName}") : null,
+                  settings: widget.routeName != null
+                      ? RouteSettings(name: "${widget.routeName}")
+                      : null,
                   builder: (BuildContext context) => navigateTo));
         } else {
-          throw new ArgumentError('widget.navigateAfterFuture must either be a String or Widget');
+          throw new ArgumentError(
+              'widget.navigateAfterFuture must either be a String or Widget');
         }
       });
     }
@@ -244,12 +261,16 @@ class _SplashScreenState extends State<SplashScreen> {
                       !widget.useLoader
                           ? Container()
                           : CircularProgressIndicator(
-                              valueColor: new AlwaysStoppedAnimation<Color>(widget.loaderColor),
+                              valueColor: new AlwaysStoppedAnimation<Color>(
+                                  widget.loaderColor),
                             ),
                       Padding(
                         padding: const EdgeInsets.only(top: 20.0),
                       ),
-                      widget.loadingText
+                      Padding(
+                        padding: widget.loadingTextPadding,
+                        child: widget.loadingText,
+                      ),
                     ],
                   ),
                 ),
