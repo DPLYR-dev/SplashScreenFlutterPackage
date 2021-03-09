@@ -201,10 +201,7 @@ class _SplashScreenState extends State<SplashScreen> {
                       ? RouteSettings(name: "${widget.routeName}")
                       : null,
                   builder: (BuildContext context) => navigateTo));
-        } else {
-          throw new ArgumentError(
-              'widget.navigateAfterFuture must either be a String or Widget');
-        }
+        } 
       });
     }
   }
