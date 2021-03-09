@@ -2,11 +2,14 @@
 
 * A splashscreen package to be used for an intro for any flutter application easily with a lot of customization
 
-### Currently Supported by awesome [DPLYR](https://dplyr.dev)
+## Currently Supported by awesome [DPLYR](https://dplyr.dev)
+
 ![image (alt)](https://i.imgur.com/D1WG1Bo.png&s=50)
+
 * [DPLYR](https://dplyr.dev) is a new generation of cloud platforms and aims to help developers in their road with open source contributions, and at the end we can say thanks.
 
-### Screenshots
+## Screenshots
+
 ![screenshot description (alt)](screenshot.png)
 
 ## Usage
@@ -26,9 +29,8 @@ To use this package :
 
 ### How to use
 
-
 ``` dart
-new SplashScreen(
+new SplashScreen.timer(
   seconds: 14,
   navigateAfterSeconds: new AfterSplash(),
   title: new Text('Welcome In SplashScreen'),
@@ -45,38 +47,28 @@ new SplashScreen(
 As time based...
 
 ``` dart
-
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
-void main(){
-  runApp(new MaterialApp(
-    home: new MyApp(),
-  ));
+
+void main() {
+  runApp(MaterialApp(home: MyApp()));
 }
 
-
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => new _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new SplashScreen(
+    return SplashScreen.timer(
       seconds: 14,
-      navigateAfterSeconds: new AfterSplash(),
-      title: new Text('Welcome In SplashScreen',
-      style: new TextStyle(
-        fontWeight: FontWeight.bold,
-        fontSize: 20.0
-      ),),
-      image: new Image.network('https://i.imgur.com/TyCSG9A.png'),
+      navigateAfterSeconds: AfterSplash(),
+      title: Text(
+        'Welcome In SplashScreen',
+        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+      ),
+      image: Image.network(
+        'https://flutter.io/images/catalog-widget-placeholder.png',
+      ),
       backgroundColor: Colors.white,
-      styleTextUnderTheLoader: new TextStyle(),
-      photoSize: 100.0,
-      onClick: ()=>print("Flutter Egypt"),
-      loaderColor: Colors.red
+      loaderColor: Colors.red,
     );
   }
 }
@@ -84,18 +76,16 @@ class _MyAppState extends State<MyApp> {
 class AfterSplash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-      title: new Text("Welcome In SplashScreen Package"),
-      automaticallyImplyLeading: false
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Welcome In SplashScreen Package'),
+        automaticallyImplyLeading: false,
       ),
-      body: new Center(
-        child: new Text("Done!",
-        style: new TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 30.0
-        ),),
-
+      body: Center(
+        child: Text(
+          'Succeeded!',
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0),
+        ),
       ),
     );
   }
@@ -105,45 +95,33 @@ class AfterSplash extends StatelessWidget {
 As future based...
 
 ``` dart
-
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
-void main(){
-  runApp(new MaterialApp(
-    home: new MyApp(),
-  ));
+
+void main() {
+  runApp(MaterialApp(home: MyApp()));
 }
 
-
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => new _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-
-  Future<Widget> loadFromFuture() async {
-  
+Future<Widget> loadFromFuture() async {
   // <fetch data from server. ex. login>
-  
-     return Future.value(new AfterSplash());
-  }
+  return AfterSplash();
+}
 
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new SplashScreen(
+    return SplashScreen.future(
       navigateAfterFuture: loadFromFuture(),
-      title: new Text('Welcome In SplashScreen',
-      style: new TextStyle(
-        fontWeight: FontWeight.bold,
-        fontSize: 20.0
-      ),),
-      image: new Image.network('https://i.imgur.com/TyCSG9A.png'),
+      navigateAfterSeconds: AfterSplash(),
+      title: Text(
+        'Welcome In SplashScreen',
+        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+      ),
+      image: Image.network(
+        'https://flutter.io/images/catalog-widget-placeholder.png',
+      ),
       backgroundColor: Colors.white,
-      styleTextUnderTheLoader: new TextStyle(),
-      photoSize: 100.0,
-      onClick: ()=>print("Flutter Egypt"),
-      loaderColor: Colors.red
+      loaderColor: Colors.red,
     );
   }
 }
@@ -151,18 +129,16 @@ class _MyAppState extends State<MyApp> {
 class AfterSplash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-      title: new Text("Welcome In SplashScreen Package"),
-      automaticallyImplyLeading: false
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Welcome In SplashScreen Package'),
+        automaticallyImplyLeading: false,
       ),
-      body: new Center(
-        child: new Text("Done!",
-        style: new TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 30.0
-        ),),
-
+      body: Center(
+        child: Text(
+          'Succeeded!',
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0),
+        ),
       ),
     );
   }
@@ -170,47 +146,29 @@ class AfterSplash extends StatelessWidget {
 ```
 
 ### Animate the main image with the hero animation
+
 The main image has this tag attached to it `splashscreenImage`. Add it to whatever page you'll navigate to. This will animate the main Image to the same image you put in another page
-
-
 
 ### Adding a custom page tranistion
 
 You can use the `pageRoute` to do just this. Here's an example
 
 ```dart
+import 'package:flutter/material.dart';
+import 'package:splashscreen/splashscreen.dart';
 
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => new _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  @override
-  Widget build(BuildContext context) {
-    return new SplashScreen(
-      seconds: 14,
-      title: new Text('Welcome In SplashScreen'
-      ),
-      image: new Image.network('https://flutter.io/images/catalog-widget-placeholder.png'),
-      backgroundColor: Colors.white,
-      photoSize: 100.0,
-      loaderColor: Colors.red,
-      pageRoute: _createRoute()
-    );
-  }
+void main() {
+  runApp(MaterialApp(home: MyApp()));
 }
 
 Route _createRoute() {
   return PageRouteBuilder(
-    pageBuilder: (context, animation, secondaryAnimation) => Page2(),
+    pageBuilder: (context, animation, secondaryAnimation) => AfterSplash(),
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
       var begin = Offset(0.0, 1.0);
       var end = Offset.zero;
       var curve = Curves.ease;
-
       var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
-
       return SlideTransition(
         position: animation.drive(tween),
         child: child,
@@ -218,10 +176,48 @@ Route _createRoute() {
     },
   );
 }
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SplashScreen.timer(
+      seconds: 14,
+      navigateAfterSeconds: AfterSplash(),
+      title: Text(
+        'Welcome In SplashScreen',
+        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+      ),
+      image: Image.network(
+        'https://flutter.io/images/catalog-widget-placeholder.png',
+      ),
+      backgroundColor: Colors.white,
+      loaderColor: Colors.red,
+      pageRoute: _createRoute(),
+    );
+  }
+}
+
+class AfterSplash extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Welcome In SplashScreen Package'),
+        automaticallyImplyLeading: false,
+      ),
+      body: Center(
+        child: Text(
+          'Succeeded!',
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0),
+        ),
+      ),
+    );
+  }
+}
 ```
 
-
 ### All Supported Projects by [DPLYR](https://dplyr.dev)
+
 * [Splash Screen - Flutter](https://github.com/DPLYR-dev/SplashScreenFlutterPackage)
   <br> a flutter package created to show simple splashscreen
 
@@ -247,6 +243,7 @@ Route _createRoute() {
   <br> A finance that is developed with Node Js
 
 ### About DPLYR
+
 [DPLYR](https://www.dplyr.dev) is a SaaS tool that helps developers just like you to deploy their web apps more easily. It supports deploying Node.js apps with MongoDB, MySQL or PostgreSQL databases all for free. Go now  to [www.dplyr.dev](https://www.dplyr.dev) and create a free account.
 
 ### Created by [Karim Mohamed](https://github.com/KarimMohamed20)
