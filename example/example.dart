@@ -2,28 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
 
 void main() {
-  runApp(new MaterialApp(
-    home: new MyApp(),
-  ));
+  runApp(MaterialApp(home: MyApp()));
 }
 
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => new _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new SplashScreen(
+    return SplashScreen.timer(
       seconds: 14,
-      navigateAfterSeconds: new AfterSplash(),
-      title: new Text(
+      navigateAfterSeconds: AfterSplash(),
+      title: Text(
         'Welcome In SplashScreen',
-        style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
       ),
-      image: new Image.network(
-          'https://flutter.io/images/catalog-widget-placeholder.png'),
+      image: Image.network(
+        'https://flutter.io/images/catalog-widget-placeholder.png',
+      ),
       backgroundColor: Colors.white,
       loaderColor: Colors.red,
     );
@@ -33,15 +27,15 @@ class _MyAppState extends State<MyApp> {
 class AfterSplash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text("Welcome In SplashScreen Package"),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Welcome In SplashScreen Package'),
         automaticallyImplyLeading: false,
       ),
-      body: new Center(
-        child: new Text(
-          "Succeeded!",
-          style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0),
+      body: Center(
+        child: Text(
+          'Succeeded!',
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0),
         ),
       ),
     );
