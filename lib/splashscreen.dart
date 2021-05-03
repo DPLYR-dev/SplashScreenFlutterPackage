@@ -49,6 +49,9 @@ class SplashScreen extends StatefulWidget {
   /// Whether to display a loader or not
   final bool useLoader;
 
+  // Custom loader widget
+  final Widget? customLoader;
+
   /// Custom page route if you have a custom transition you want to play
   final Route? pageRoute;
 
@@ -84,6 +87,7 @@ class SplashScreen extends StatefulWidget {
     this.imageBackground,
     this.gradientBackground,
     required this.useLoader,
+    this.customLoader,
     this.routeName,
   })  : assert(
           routeName == null ||
@@ -129,6 +133,7 @@ class SplashScreen extends StatefulWidget {
     ImageProvider? imageBackground,
     Gradient? gradientBackground,
     bool useLoader = true,
+    Widget? customLoader,
     String? routeName,
   }) =>
       SplashScreen(
@@ -147,6 +152,7 @@ class SplashScreen extends StatefulWidget {
         imageBackground: imageBackground,
         gradientBackground: gradientBackground,
         useLoader: useLoader,
+        customLoader: customLoader,
         routeName: routeName,
       );
 
@@ -166,6 +172,7 @@ class SplashScreen extends StatefulWidget {
     ImageProvider? imageBackground,
     Gradient? gradientBackground,
     bool useLoader = true,
+    Widget? customLoader,
     String? routeName,
   }) =>
       SplashScreen(
@@ -184,6 +191,7 @@ class SplashScreen extends StatefulWidget {
         imageBackground: imageBackground,
         gradientBackground: gradientBackground,
         useLoader: useLoader,
+        customLoader: customLoader,
         routeName: routeName,
       );
 
@@ -287,13 +295,22 @@ class _SplashScreenState extends State<SplashScreen> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      widget.useLoader
-                          ? CircularProgressIndicator(
-                              valueColor: AlwaysStoppedAnimation<Color?>(
-                                widget.loaderColor,
-                              ),
-                            )
-                          : Container(),
+                      if (widget.useLoader == true) ...[
+                        if (widget.customLoader != null) ...[
+                          Container(
+                            alignment: Alignment.center,
+                            child: widget.customLoader,
+                          )
+                        ] else ...[
+                          CircularProgressIndicator(
+                            valueColor: AlwaysStoppedAnimation<Color?>(
+                              widget.loaderColor,
+                            ),
+                          )
+                        ]
+                      ] else ...[
+                        Container()
+                      ],
                       Padding(
                         padding: const EdgeInsets.only(top: 20.0),
                       ),
