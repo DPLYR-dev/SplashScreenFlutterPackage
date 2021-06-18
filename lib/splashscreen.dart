@@ -22,6 +22,10 @@ class SplashScreen extends StatefulWidget {
   /// String or Widget
   final Object? navigateAfterSeconds;
 
+  /// If you are using some route's management and needs to use a function to navigate
+  /// to another page
+  final void Function()? navigateAfterSecondsFunction;
+
   /// Main image size
   final double? photoSize;
 
@@ -85,6 +89,7 @@ class SplashScreen extends StatefulWidget {
     this.gradientBackground,
     required this.useLoader,
     this.routeName,
+    this.navigateAfterSecondsFunction,
   })  : assert(
           routeName == null ||
               (routeName is String && routeName.startsWith('/')),
@@ -124,6 +129,7 @@ class SplashScreen extends StatefulWidget {
     Route? pageRoute,
     GestureTapCallback? onClick,
     Object? navigateAfterSeconds,
+    void Function()? navigateAfterSecondsFunction,
     Text title = const Text(''),
     TextStyle styleTextUnderTheLoader = _defaultStyleTextUnderTheLoader,
     ImageProvider? imageBackground,
@@ -142,6 +148,7 @@ class SplashScreen extends StatefulWidget {
         pageRoute: pageRoute,
         onClick: onClick,
         navigateAfterSeconds: navigateAfterSeconds,
+        navigateAfterSecondsFunction: navigateAfterSecondsFunction,
         title: title,
         styleTextUnderTheLoader: styleTextUnderTheLoader,
         imageBackground: imageBackground,
@@ -161,6 +168,7 @@ class SplashScreen extends StatefulWidget {
     Route? pageRoute,
     GestureTapCallback? onClick,
     dynamic navigateAfterSeconds,
+    void Function()? navigateAfterSecondsFunction,
     Text title = const Text(''),
     TextStyle styleTextUnderTheLoader = _defaultStyleTextUnderTheLoader,
     ImageProvider? imageBackground,
@@ -179,6 +187,7 @@ class SplashScreen extends StatefulWidget {
         pageRoute: pageRoute,
         onClick: onClick,
         navigateAfterSeconds: navigateAfterSeconds,
+        navigateAfterSecondsFunction: navigateAfterSecondsFunction,
         title: title,
         styleTextUnderTheLoader: styleTextUnderTheLoader,
         imageBackground: imageBackground,
@@ -197,7 +206,9 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     if (widget.navigateAfterFuture == null) {
       Timer(Duration(seconds: widget.seconds!), () {
-        if (widget.navigateAfterSeconds is String) {
+        if (widget.navigateAfterSecondsFunction != null)
+          widget.navigateAfterSecondsFunction!();
+        else if (widget.navigateAfterSeconds is String) {
           // It's fairly safe to assume this is using the in-built material
           // named route component
           Navigator.of(context).pushReplacementNamed(
