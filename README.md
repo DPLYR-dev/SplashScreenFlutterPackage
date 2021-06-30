@@ -1,5 +1,5 @@
 # [Splash Screen](https://pub.dev/packages/splashscreen)
-
+<a href="https://pub.dev/packages/splashscreen"><img src="https://img.shields.io/pub/v/splashscreen?logo=dart" alt="pub.dev"></a>
 * A splashscreen package to be used for an intro for any flutter application easily with a lot of customization
 
 ## Currently Supported by awesome [DPLYR](https://dplyr.dev)
