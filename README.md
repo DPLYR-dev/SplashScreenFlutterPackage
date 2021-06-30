@@ -24,7 +24,7 @@ To use this package :
   dependencies:
     flutter:
       sdk: flutter
-    splashscreen:
+    splashscreen: ^1.3.5
 ```
 
 ### How to use
