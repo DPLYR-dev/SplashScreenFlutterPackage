@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.0] - Dart 3 Support
+
+* Updated SDK constraint to Dart 3 (>=3.0.0 <4.0.0)
+* Added Flutter SDK constraint (>=3.10.0)
+* Replaced deprecated Container and Padding patterns with SizedBox
+* Updated example with const constructors and super.key parameters
+* Code cleanup and modernization
+
 ## [1.4.0] - Null Safety Support
 
 * Implement null safety support

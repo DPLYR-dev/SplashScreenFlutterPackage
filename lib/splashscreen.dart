@@ -86,8 +86,7 @@ class SplashScreen extends StatefulWidget {
     required this.useLoader,
     this.routeName,
   })  : assert(
-          routeName == null ||
-              (routeName is String && routeName.startsWith('/')),
+          routeName == null || routeName.startsWith('/'),
           'routeName must be a String beginning with forward slash (/)',
         ),
         assert(
@@ -108,8 +107,7 @@ class SplashScreen extends StatefulWidget {
         ),
         assert(
           navigateAfterSeconds is! String ||
-              (navigateAfterSeconds is String &&
-                  navigateAfterSeconds.startsWith('/')),
+              navigateAfterSeconds.startsWith('/'),
           'navigateAfterSeconds must be a String beginning with forward slash (/)',
         );
 
@@ -262,24 +260,22 @@ class _SplashScreenState extends State<SplashScreen> {
               children: <Widget>[
                 Expanded(
                   flex: 2,
-                  child: Container(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        CircleAvatar(
-                          backgroundColor: Colors.transparent,
-                          child: Hero(
-                            tag: 'splashscreenImage',
-                            child: Container(child: widget.image),
-                          ),
-                          radius: widget.photoSize,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 10.0),
-                        ),
-                        widget.title
-                      ],
-                    ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      CircleAvatar(
+                        backgroundColor: Colors.transparent,
+                        radius: widget.photoSize,
+                        child: widget.image != null
+                            ? Hero(
+                                tag: 'splashscreenImage',
+                                child: widget.image!,
+                              )
+                            : null,
+                      ),
+                      const SizedBox(height: 10.0),
+                      widget.title
+                    ],
                   ),
                 ),
                 Expanded(
@@ -287,16 +283,13 @@ class _SplashScreenState extends State<SplashScreen> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      widget.useLoader
-                          ? CircularProgressIndicator(
-                              valueColor: AlwaysStoppedAnimation<Color?>(
-                                widget.loaderColor,
-                              ),
-                            )
-                          : Container(),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 20.0),
-                      ),
+                      if (widget.useLoader)
+                        CircularProgressIndicator(
+                          valueColor: AlwaysStoppedAnimation<Color?>(
+                            widget.loaderColor,
+                          ),
+                        ),
+                      const SizedBox(height: 20.0),
                       Padding(
                         padding: widget.loadingTextPadding,
                         child: widget.loadingText,
