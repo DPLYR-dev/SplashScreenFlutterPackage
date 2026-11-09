@@ -1,13 +1,13 @@
-.idea/
+# Miscellaneous
 .DS_Store
-.dart_tool/
+.idea/
+*.iml
+.vscode/
 
+# Dart / Flutter
+.dart_tool/
 .packages
 .pub/
-*.iml
-
 build/
-ios/.generated/
-ios/Flutter/Generated.xcconfig
-ios/Runner/GeneratedPluginRegistrant.*
-!/splashscreen.iml
+pubspec.lock
+coverage/
