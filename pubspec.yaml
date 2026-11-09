@@ -1,7 +1,22 @@
 name: splashscreen
-description: A splashscreen package created as intro for any flutter application easily with a lot of customization
-version: 2.0.0
+description: A customizable, theme-aware splash screen for Flutter with timer or future-based navigation, entrance animations and Material 3 defaults.
+version: 3.0.0
 homepage: https://github.com/DPLYR-dev/SplashScreenFlutterPackage
+repository: https://github.com/DPLYR-dev/SplashScreenFlutterPackage
+issue_tracker: https://github.com/DPLYR-dev/SplashScreenFlutterPackage/issues
+topics:
+  - splash-screen
+  - splash
+  - widget
+  - ui
+
+screenshots:
+  - description: Light theme splash with logo, title and loader.
+    path: screenshots/light.png
+  - description: Same splash following the app's dark theme.
+    path: screenshots/dark.png
+  - description: Splash with a gradient background.
+    path: screenshots/gradient.png
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
@@ -9,4 +24,9 @@ environment:
 
 dependencies:
   flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_lints: ^5.0.0
+  flutter_test:
     sdk: flutter
